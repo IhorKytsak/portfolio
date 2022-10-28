@@ -1,7 +1,7 @@
 import React from 'react';
 import { Line } from 'rc-progress';
 import { BsInfoCircleFill } from 'react-icons/bs';
-import PageHeaderContent from '../../components/pageHeaderContainer';
+import PageHeaderContent from '../../components/pageHeaderContent';
 import { Animate, AnimateKeyframes } from 'react-simple-animate';
 import './styles.scss';
 

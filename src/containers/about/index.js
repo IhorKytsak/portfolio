@@ -3,7 +3,7 @@ import { BsInfoCircleFill } from 'react-icons/bs';
 import { Animate } from "react-simple-animate";
 import { DiApple, DiAndroid } from "react-icons/di";
 import { FaDev, FaDatabase } from "react-icons/fa";
-import PageHeaderContent from '../../components/pageHeaderContainer';
+import PageHeaderContent from '../../components/pageHeaderContent';
 import "./styles.scss";
 
 const personalDetails = [
