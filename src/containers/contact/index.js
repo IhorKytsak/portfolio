@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsInfoCircleFill } from 'react-icons/bs';
-import PageHeaderContent from '../../components/pageHeaderContainer/portfolio';
+import PageHeaderContent from '../../components/pageHeaderContainer';
 
 const Contact = () => {
   return (
