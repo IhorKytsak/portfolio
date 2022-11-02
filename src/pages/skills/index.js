@@ -3,61 +3,8 @@ import { Line } from 'rc-progress';
 import { BsInfoCircleFill } from 'react-icons/bs';
 import PageHeaderContent from '../../components/pageHeaderContent';
 import { Animate, AnimateKeyframes } from 'react-simple-animate';
+import { skillsData } from './constants';
 import './styles.scss';
-
-const skillsData = [
-  {
-    label: 'FRONT END',
-    data: [
-      {
-        skillName: 'HTML',
-        percentage: '90',
-      },
-      {
-        skillName: 'CSS',
-        percentage: '50',
-      },
-      {
-        skillName: 'JAVASCRIPT',
-        percentage: '80',
-      },
-    ],
-  },
-  {
-    label: 'BACK END',
-    data: [
-      {
-        skillName: 'JAVA',
-        percentage: '70',
-      },
-      {
-        skillName: 'PYTHON',
-        percentage: '65',
-      },
-      {
-        skillName: 'KOTLIN',
-        percentage: '35',
-      },
-    ],
-  },
-  {
-    label: 'DATABASES',
-    data: [
-      {
-        skillName: 'SQL',
-        percentage: '70',
-      },
-      {
-        skillName: 'MONGO DB',
-        percentage: '65',
-      },
-      {
-        skillName: 'ORACLE',
-        percentage: '85',
-      },
-    ],
-  },
-];
 
 const Skills = () => {
   return (
