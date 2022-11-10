@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import PageHeaderContent from '../../components/pageHeaderContent';
 import { BsInfoCircleFill } from 'react-icons/bs';
 import { Animate } from 'react-simple-animate';
 import './styles.scss';
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_6jbedpo',
+        'template_wqcig5m',
+        form.current,
+        'lqRGSrsz-UoHJjHhA'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <section id='contact' className='contact'>
       <PageHeaderContent
@@ -36,7 +59,11 @@ const Contact = () => {
             transform: 'translateX(0px)',
           }}
         >
-          <div className='contact__content__form'>
+          <form
+            className='contact__content__form'
+            ref={form}
+            onSubmit={sendEmail}
+          >
             <div className='contact__content__form__controlswrapper'>
               <div>
                 <input
@@ -63,18 +90,18 @@ const Contact = () => {
               <div>
                 <textarea
                   required
-                  name='description'
+                  name='message'
                   className='inputDescription'
                   type={'text'}
                   rows='5'
                 />
-                <label htmlFor='description' className='descriptionLabel'>
+                <label htmlFor='message' className='descriptionLabel'>
                   Description
                 </label>
               </div>
             </div>
             <button>Submit</button>
-          </div>
+          </form>
         </Animate>
       </div>
     </section>
