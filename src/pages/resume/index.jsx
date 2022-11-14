@@ -14,7 +14,7 @@ const Resume = () => {
   return (
     <section id='resume' className='resume'>
       <PageHeaderContent
-        headerText='My Resume'
+        text='My Resume'
         icon={<BsInfoCircleFill size={40} />}
       />
       <div className='timeline'>

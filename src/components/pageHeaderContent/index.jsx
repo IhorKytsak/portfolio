@@ -1,11 +1,9 @@
 import './styles.scss';
 
-const PageHeaderContent = (props) => {
-  const { headerText, icon } = props;
-
+const PageHeaderContent = ({ text, icon }) => {
   return (
     <div className='wrapper'>
-      <h2>{headerText}</h2>
+      <h2>{text}</h2>
       <span>{icon}</span>
     </div>
   );

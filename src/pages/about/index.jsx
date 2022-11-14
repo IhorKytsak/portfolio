@@ -11,7 +11,7 @@ const About = () => {
   return (
     <section id='about' className='about'>
       <PageHeaderContent
-        headerText='About Me'
+        text='About Me'
         icon={<BsInfoCircleFill size={40} />}
       />
       <div className='about__content'>

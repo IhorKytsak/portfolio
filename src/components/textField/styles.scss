@@ -1,0 +1,44 @@
+.inputBox {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--yellow-theme-main-color);
+    border-radius: 5px;
+    color: var(--yellow-theme-sub-text-color);
+    caret-color: var(--yellow-theme-sub-text-color);
+    font-size: 14px;
+    background: var(--yellow-theme-background-color);
+  }
+
+  input:autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--yellow-theme-background-color) inset;
+    box-shadow: 0 0 0 30px var(--yellow-theme-background-color) inset;
+    -webkit-text-fill-color: var(--yellow-theme-sub-text-color);
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    padding: 15px;
+    pointer-events: none;
+    font-size: 14px;
+    color: var(--yellow-theme-main-color);
+    text-transform: uppercase;
+    transition: 0.4s;
+    letter-spacing: 2px;
+  }
+
+  input:valid ~ span,
+  input:focus ~ span,
+  input:not(:placeholder-shown) ~ span {
+    color: var(--yellow-theme-main-color);
+    transform: translateX(10px) translateY(-6px);
+    padding: 2px 15px;
+    font-size: 10px;
+    background: var(--yellow-theme-background-color);
+    border-left: 1px solid var(--yellow-theme-main-color);
+    border-right: 1px solid var(--yellow-theme-main-color);
+  }
+}

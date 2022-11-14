@@ -11,7 +11,6 @@ const Home = () => {
   const handleNavigateToContactMePage = () => {
     navigate('/contact');
   };
-  console.log(i18n);
 
   return (
     <section id='home' className='home'>
