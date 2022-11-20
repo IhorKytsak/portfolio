@@ -1,10 +1,10 @@
 import './styles.scss';
 
-const SocialLink = ({ link, text, img }) => {
+const SocialLink = ({ link, text, Icon }) => {
   return (
     <div className='socialBox'>
       <a className='socialLink' href={link} target='_blank'>
-        <span>{img}</span>
+        <span>{Icon}</span>
         <p>{text}</p>
       </a>
     </div>

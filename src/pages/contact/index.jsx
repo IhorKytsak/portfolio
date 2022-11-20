@@ -10,6 +10,7 @@ import HeaderWithUnderline from '../../components/headerWithUnderline';
 import TextField from '../../components/textField';
 import TextareaField from '../../components/textareaField';
 import Button from '../../components/button';
+import { socials } from '../../constants/socials';
 
 import './styles.scss';
 import SocialLink from '../../components/socialLink';
@@ -45,36 +46,14 @@ const Contact = () => {
       />
       <div className='contact__content'>
         <div className='contact__social'>
-          <SocialLink
-            link='https://t.me/kytsak'
-            text='Telegram'
-            img={<BsTelegram size={45} />}
-          />
-          <SocialLink
-            link='https://t.me/kytsak'
-            text='Telegram'
-            img={<BsTelegram size={45} />}
-          />
-          <SocialLink
-            link='https://t.me/kytsak'
-            text='Telegram'
-            img={<BsTelegram size={45} />}
-          />
-          <SocialLink
-            link='https://t.me/kytsak'
-            text='Telegram'
-            img={<BsTelegram size={45} />}
-          />
-          {/* <SocialLink
-            link='https://t.me/kytsak'
-            text='Telegram'
-            img={<BsTelegram size={45} />}
-          />
-          <SocialLink
-            link='https://t.me/kytsak'
-            text='Telegram'
-            img={<BsTelegram size={45} />}
-          /> */}
+          {socials.map((social) => (
+            <SocialLink
+              key={social.text}
+              link={social.link}
+              text={social.text}
+              Icon={social.icon}
+            />
+          ))}
         </div>
 
         <form className='contact__form' ref={form} onSubmit={sendEmail}>
