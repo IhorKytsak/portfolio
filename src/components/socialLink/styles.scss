@@ -1,0 +1,22 @@
+.socialBox {
+  display: flex;
+  justify-content: center;
+  min-width: 155px;
+
+  .socialLink {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--yellow-theme-main-color);
+    padding: 10px;
+    border: 1px solid var(--yellow-theme-main-color);
+    border-radius: 5px;
+
+    width: 125px;
+    height: 125px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+}
