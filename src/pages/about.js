@@ -1,10 +1,12 @@
-import AnimatedText from '@/components/AnimatedText'
-import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
-import profilePic from '../../public/images/profile/developer-pic-2.jpg'
 import { useEffect, useRef } from 'react'
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
+
+import AnimatedText from '@/components/AnimatedText'
+import Layout from '@/components/Layout'
+import Skills from '@/components/Skills'
+import profilePic from '../../public/images/profile/developer-pic-2.jpg'
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null)
@@ -86,7 +88,6 @@ const About = () => {
               </div>
               <div className='flex flex-col items-end justify-center'>
                 <span className='inline-block text-7xl font-bold'>
-                  {' '}
                   <AnimatedNumbers value={30} />+
                 </span>
                 <h2 className='text-xl font-medium capitalize text-dark'>
@@ -103,6 +104,7 @@ const About = () => {
               </div>
             </div>
           </div>
+          <Skills />
         </Layout>
       </main>
     </>
