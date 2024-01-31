@@ -7,6 +7,7 @@ import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 import { GithubIcon } from '@/components/Icons'
 import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const FramerImage = motion(Image)
 
@@ -116,6 +117,7 @@ const Projects = () => {
         <title>Projects Page</title>
         <meta name='description' content='any desc' />
       </Head>
+      <TransitionEffect />
       <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText

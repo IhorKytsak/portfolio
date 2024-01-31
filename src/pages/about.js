@@ -9,6 +9,7 @@ import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
 import profilePic from '../../public/images/profile/developer-pic-2.jpg'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null)
@@ -43,6 +44,7 @@ const About = () => {
         <title>About Page</title>
         <meta name='description' content='any desc' />
       </Head>
+      <TransitionEffect />
       <main className='flex w-full flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText

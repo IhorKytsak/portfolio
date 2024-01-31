@@ -9,6 +9,7 @@ import Layout from '@/components/Layout'
 import article1 from '../../public/images/articles/pagination component in reactjs.jpg'
 import article2 from '../../public/images/articles/form validation in reactjs using custom react hook.png'
 import article3 from '../../public/images/articles/create modal component in react using react portals.png'
+import TransitionEffect from '@/components/TransitionEffect'
 
 const FramerImage = motion(Image)
 
@@ -107,6 +108,7 @@ const Articles = () => {
         <title>Articles Page</title>
         <meta name='description' content='any desc' />
       </Head>
+      <TransitionEffect />
       <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText
