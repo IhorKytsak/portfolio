@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { AnimatePresence } from 'framer-motion'
+import { IntlProvider } from 'react-intl'
+import en from '../i18n/en.json'
+import uk from '../i18n/uk.json'
 import { Montserrat } from 'next/font/google'
 import '@/styles/globals.css'
 
@@ -12,8 +15,18 @@ const montserrat = Montserrat({
   variable: '--font-mont',
 })
 
+const messages = {
+  en,
+  uk,
+}
+
+function getDirection(locale) {
+  return 'Itr'
+}
+
 export default function App({ Component, pageProps }) {
-  const router = useRouter()
+  const { locale, asPath } = useRouter()
+
   return (
     <>
       <Head>
@@ -24,9 +37,11 @@ export default function App({ Component, pageProps }) {
         className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}
       >
         <NavBar />
-        <AnimatePresence mode='wait'>
-          <Component key={router.asPath} {...pageProps} />
-        </AnimatePresence>
+        <IntlProvider locale={locale} messages={messages[locale]}>
+          <AnimatePresence mode='wait'>
+            <Component key={asPath} {...pageProps} dir={getDirection(locale)} />
+          </AnimatePresence>
+        </IntlProvider>
         <Footer />
       </main>
     </>

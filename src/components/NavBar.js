@@ -13,6 +13,7 @@ import {
 } from './Icons'
 import { motion } from 'framer-motion'
 import useThemeSwitcher from '@/hooks/useThemeSwitcher'
+import LanguagePicker from './LanguagePicker'
 
 const CustomLink = ({ href, title, className = '' }) => {
   const router = useRouter()
@@ -153,6 +154,7 @@ const NavBar = () => {
               <MoonIcon className='fill-dark' />
             )}
           </button>
+          <LanguagePicker />
         </nav>
       </div>
 
@@ -247,6 +249,7 @@ const NavBar = () => {
                 <MoonIcon className='fill-dark' />
               )}
             </button>
+            <LanguagePicker />
           </nav>
         </motion.div>
       ) : null}
