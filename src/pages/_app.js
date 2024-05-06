@@ -7,7 +7,7 @@ import uk from '../i18n/uk.json'
 import { Montserrat } from 'next/font/google'
 import '@/styles/globals.css'
 
-import NavBar from '@/components/NavBar'
+import { NavBar } from '@/components/navigation'
 import Footer from '@/components/Footer'
 
 const montserrat = Montserrat({

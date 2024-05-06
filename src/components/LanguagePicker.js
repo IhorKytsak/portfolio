@@ -12,7 +12,9 @@ const LanguagePicker = () => {
           <motion.div
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className={`px-1.5 ${l === locale ? 'font-bold' : ''}`}
+            className={`px-1.5 leading-tight ${
+              l === locale ? 'font-bold' : ''
+            }`}
           >
             {l}
           </motion.div>
