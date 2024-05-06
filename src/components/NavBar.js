@@ -12,6 +12,8 @@ import {
   MoonIcon,
 } from './Icons'
 import { motion } from 'framer-motion'
+import { useIntl } from 'react-intl'
+
 import useThemeSwitcher from '@/hooks/useThemeSwitcher'
 import LanguagePicker from './LanguagePicker'
 
@@ -57,9 +59,15 @@ const CustomMobileLink = ({ href, title, className = '', toggle }) => {
   )
 }
 
+const NAV_ITEMS = []
+
 const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher()
   const [isOpen, setIsOpen] = useState(false)
+
+  const { formatMessage } = useIntl()
+
+  const headTitle = formatMessage({ id: 'navigation.home' })
 
   const handleClick = () => {
     setIsOpen(!isOpen)
@@ -90,7 +98,7 @@ const NavBar = () => {
 
       <div className='w-full flex justify-between items-center lg:hidden  '>
         <nav>
-          <CustomLink href='/' title='Home' className='mr-4' />
+          <CustomLink href='/' title={headTitle} className='mr-4' />
           <CustomLink href='/about' title='About' className='mr-4' />
           <CustomLink href='/projects' title='Projects' className='mr-4' />
           <CustomLink href='/articles' title='Articles' className='mr-4' />

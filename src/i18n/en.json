@@ -1,6 +1,13 @@
 {
-  "home.title": "Turning Vision Into Reality With Code And Design.",
-  "page.home.head.meta.description": "Next.js i18n example - English",
-  "page.home.title": "Welcome to <b>the home page</b>",
-  "page.home.description": "The home page that you are currently viewing is in English."
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "articles": "Articles"
+  },
+  "home": {
+    "head.title": "Home Page",
+    "page.title": "Turning Vision Into Reality With Code And Design.",
+    "page.description": "The home page that you are currently viewing is in English."
+  }
 }

@@ -1,6 +1,13 @@
 {
-  "home.title": "Перетворення бачення в реальність за допомогою коду та дизайну.",
-  "page.home.head.meta.description": "Next.js i18n example - English",
-  "page.home.title": "Welcome to <b>the home page</b>",
-  "page.home.description": "The home page that you are currently viewing is in English."
+  "navigation": {
+    "home": "Головна",
+    "about": "Про мене",
+    "projects": "Проекти",
+    "articles": "Статті"
+  },
+  "home": {
+    "head.title": "Головна",
+    "page.title": "Перетворення бачення в реальність за допомогою коду та дизайну.",
+    "page.description": "The home page that you are currently viewing is in English."
+  }
 }

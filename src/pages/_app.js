@@ -20,6 +20,24 @@ const messages = {
   uk,
 }
 
+export const flattenMessages = (nestedMessages, prefix = '') => {
+  if (nestedMessages === null) {
+    return {}
+  }
+  return Object.keys(nestedMessages).reduce((messages, key) => {
+    const value = nestedMessages[key]
+    const prefixedKey = prefix ? `${prefix}.${key}` : key
+
+    if (typeof value === 'string') {
+      Object.assign(messages, { [prefixedKey]: value })
+    } else {
+      Object.assign(messages, flattenMessages(value, prefixedKey))
+    }
+
+    return messages
+  }, {})
+}
+
 function getDirection(locale) {
   return 'Itr'
 }
@@ -36,13 +54,16 @@ export default function App({ Component, pageProps }) {
       <main
         className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}
       >
-        <NavBar />
-        <IntlProvider locale={locale} messages={messages[locale]}>
+        <IntlProvider
+          locale={locale}
+          messages={flattenMessages(messages[locale])}
+        >
+          <NavBar />
           <AnimatePresence mode='wait'>
             <Component key={asPath} {...pageProps} dir={getDirection(locale)} />
           </AnimatePresence>
+          <Footer />
         </IntlProvider>
-        <Footer />
       </main>
     </>
   )

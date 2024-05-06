@@ -3,14 +3,12 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const LanguagePicker = () => {
-  const { locales, locale } = useRouter()
-
-  console.log(locales, locale, 'LanguagePicker')
+  const { locales, locale, pathname } = useRouter()
 
   return (
     <div className='flex items-center justify-center ml-2 divide-x divide-dark dark:divide-light lg:divide-light lg:dark:divide-dark lg:text-light lg:dark:text-dark'>
       {[...locales].sort().map((l) => (
-        <Link key={l} href='/' locale={l}>
+        <Link key={l} href={pathname} locale={l}>
           <motion.div
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
