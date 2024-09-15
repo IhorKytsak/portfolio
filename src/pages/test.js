@@ -8,6 +8,7 @@ import TransitionEffect from '@/components/TransitionEffect'
 import { CustomModalAnimated } from '@/components/test-page/modal-animated'
 import { TestModalHeader } from '@/components/test-page/TestModalHeader'
 import { Close as CloseIcon } from '@mui/icons-material'
+import ImageWithText from '@/components/test-page/ImageWithText'
 
 const TestHiddenPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -28,7 +29,7 @@ const TestHiddenPage = () => {
       <TransitionEffect />
       <main className='flex w-full flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16 min-h-[159vh]'>
-          <div onClick={openModal}>HIIIIIIIIIIIIIIIi</div>
+          <ImageWithText />
           <button
             onClick={openModal}
             className='mt-4 px-4 py-2 bg-blue-500 text-black rounded'
