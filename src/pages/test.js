@@ -19,7 +19,7 @@ const TestHiddenPage = () => {
       </Head>
       <TransitionEffect />
       <main className='flex w-full flex-col items-center justify-center dark:text-light'>
-        <Layout className='pt-16'>
+        <Layout className='pt-16 min-h-[159vh]'>
           <div onClick={openModal}>HIIIIIIIIIIIIIIIi</div>
           <button
             onClick={openModal}
