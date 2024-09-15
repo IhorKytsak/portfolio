@@ -37,8 +37,7 @@ export const TestModalHeader = ({ currentIndex, scanLength, slot }) => {
           alignItems: 'center',
           justifyContent: 'center',
           gap: '10px',
-          padding:
-            'calc(32px + env(safe-area-inset-top) + env(safe-area-inset-bottom)) 32px 0px',
+          padding: '32px 32px 0px',
         }}
       >
         <Typography

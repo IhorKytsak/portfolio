@@ -1,5 +1,7 @@
 import { Modal, useTheme, IconButton, Box, Slide } from '@mui/material'
 import { Close as CloseIcon } from '@mui/icons-material'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 export const CustomModalAnimated = ({
   open,
@@ -11,6 +13,19 @@ export const CustomModalAnimated = ({
   showCloseButton = false,
 }) => {
   const theme = useTheme()
+  const [modalHeight, setModalHeight] = useState('100vh')
+
+  useEffect(() => {
+    const updateModalHeight = () => {
+      const vh = window.innerHeight * 0.01
+      setModalHeight(`${vh * 100}px`)
+    }
+
+    updateModalHeight() // Initial calculation
+    window.addEventListener('resize', updateModalHeight)
+
+    return () => window.removeEventListener('resize', updateModalHeight)
+  }, [])
 
   return (
     <Modal
@@ -43,7 +58,7 @@ export const CustomModalAnimated = ({
           }}
           sx={{
             // minHeight: '100vh',
-            height: 'calc(100vh - env(safe-area-inset-bottom))',
+            height: modalHeight,
             outline: 'none',
             ...sx,
             position: 'relative',
