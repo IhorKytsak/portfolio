@@ -16,7 +16,7 @@ const LanguagePicker = () => {
               l === locale ? 'font-bold' : ''
             }`}
           >
-            {l}
+            {l === 'uk' ? 'UA' : l.toLocaleUpperCase()}
           </motion.div>
         </Link>
       ))}

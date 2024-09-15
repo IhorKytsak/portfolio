@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
-import { useRouter } from 'next/router'
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
 
 import AnimatedText from '@/components/AnimatedText'

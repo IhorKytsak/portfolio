@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { AnimatePresence } from 'framer-motion'
@@ -43,7 +44,25 @@ function getDirection(locale) {
 }
 
 export default function App({ Component, pageProps }) {
-  const { locale, asPath } = useRouter()
+  const { locale, asPath, push } = useRouter()
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      // Check if Ctrl + Q is pressed
+      if (event.ctrlKey && event.key === 'q') {
+        // Navigate to the test hidden page
+        push('/test')
+      }
+    }
+
+    // Add event listener for keydown
+    window.addEventListener('keydown', handleKeyPress)
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress)
+    }
+  }, [push])
 
   return (
     <>
