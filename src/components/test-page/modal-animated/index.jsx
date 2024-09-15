@@ -42,7 +42,7 @@ export const CustomModalAnimated = ({
             }
           }}
           sx={{
-            minHeight: '100vh',
+            // minHeight: '100vh',
             height: 'calc(100vh - env(safe-area-inset-bottom))',
             outline: 'none',
             ...sx,
