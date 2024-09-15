@@ -11,9 +11,13 @@ import { Close as CloseIcon } from '@mui/icons-material'
 
 const TestHiddenPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
-
+  const [headerHeight, setHeaderHeight] = useState(175)
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
+
+  const handleHeaderHeight = (height) => {
+    setHeaderHeight(height)
+  }
 
   return (
     <>
@@ -60,6 +64,7 @@ const TestHiddenPage = () => {
             >
               <TestModalHeader
                 slot='container-start'
+                handleHeaderHeight={handleHeaderHeight}
                 currentIndex={1}
                 scanLength={3}
               />
@@ -151,9 +156,7 @@ Nam aliquam, eros nec sodales volutpat, odio diam faucibus nulla, non fermentum 
                       maxWidth: '800px',
                       width: '100%',
                       margin: '0 auto',
-                      height: '100%',
-                      maxHeight:
-                        'calc(100vh - 185px - env(safe-area-inset-top) - env(safe-area-inset-bottom))',
+                      height: `calc(100vh - ${headerHeight}px - env(safe-area-inset-top) - env(safe-area-inset-bottom))`,
                       overflowY: 'auto',
                       padding: '20px 32px',
                     }}

@@ -8,13 +8,47 @@ import {
 } from '@mui/material'
 import { useSwiper } from 'swiper/react'
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material'
+import { useEffect, useRef, useState } from 'react'
 
-export const TestModalHeader = ({ currentIndex, scanLength, slot }) => {
+export const TestModalHeader = ({
+  currentIndex,
+  scanLength,
+  slot,
+  handleHeaderHeight,
+}) => {
   const theme = useTheme()
+  const [headerHeight, setHeaderHeight] = useState(0)
+  const headerRef = useRef(null)
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
+  const updateHeaderHeight = () => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.offsetHeight)
+    }
+  }
+
+  useEffect(() => {
+    // Initial measurement
+    updateHeaderHeight()
+
+    // Add resize event listener
+    window.addEventListener('resize', updateHeaderHeight)
+
+    return () => {
+      // Cleanup event listener
+      window.removeEventListener('resize', updateHeaderHeight)
+    }
+  }, [headerRef])
+
+  useEffect(() => {
+    if (headerHeight) {
+      handleHeaderHeight(headerHeight)
+    }
+  }, [headerHeight, handleHeaderHeight])
 
   return (
     <div
+      ref={headerRef}
       slot={slot}
       style={{
         position: 'sticky',
