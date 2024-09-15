@@ -12,7 +12,6 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material'
 export const TestModalHeader = ({ currentIndex, scanLength, slot }) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-  const swiper = useSwiper()
 
   return (
     <div
@@ -23,7 +22,7 @@ export const TestModalHeader = ({ currentIndex, scanLength, slot }) => {
         // flexDirection: 'column',
         // justifyContent: 'center',
         // pt: 4,
-        top: 0,
+        top: `calc(env(safe-area-inset-top) + 0px)`,
         zIndex: 102,
         gap: '3px',
         width: '100%',
