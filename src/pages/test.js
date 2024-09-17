@@ -148,8 +148,6 @@ Nam aliquam, eros nec sodales volutpat, odio diam faucibus nulla, non fermentum 
                     justifyContent: 'center',
                     alignItems: 'center',
                     width: '100%',
-
-                    // Center the slide horizontally
                   }}
                 >
                   <Box
@@ -160,6 +158,7 @@ Nam aliquam, eros nec sodales volutpat, odio diam faucibus nulla, non fermentum 
                       height: `calc(100vh - ${headerHeight}px - env(safe-area-inset-top) - env(safe-area-inset-bottom))`,
                       overflowY: 'auto',
                       padding: '20px 32px',
+                      paddingBottom: `calc(32px + env(safe-area-inset-top) + env(safe-area-inset-bottom))`,
                     }}
                   >
                     {scan}
