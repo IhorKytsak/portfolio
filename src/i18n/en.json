@@ -7,7 +7,65 @@
   },
   "home": {
     "head.title": "Home Page",
-    "page.title": "Turning Vision Into Reality With Code And Design.",
-    "page.description": "The home page that you are currently viewing is in English."
+    "page.title": "Turning Vision Into Reality With Code And Design."
+  },
+  "about": {
+    "head.title": "About Page",
+    "title": "Passion Fuels Purpose!",
+    "biography": {
+      "title": "Biography",
+      "paragraphs": [
+        "Hi, I'm Ihor, a software developer with a passion for building efficient, high-quality web applications and exploring the world of blockchain technology. With hands-on experience in React, Node.js, and blockchain development, I am dedicated to creating scalable, user-friendly solutions that drive value.",
+        "I believe that coding is more than just writing lines of code – it’s about solving real-world problems, building innovative solutions, and enhancing the user experience. Whether I’m working on a full-stack application, refining a UI, or exploring decentralized systems, I bring a commitment to excellence and a constant drive to improve.",
+        "I look forward to bringing my skills, passion, and creative problem-solving to your next project."
+      ]
+    },
+    "satisfied-clients": "satisfied clients",
+    "projects-completed": "projects completed",
+    "years-of-experience": "years of experience",
+    "show-more-button": "Show More",
+    "show-less-button": "Show Less",
+
+    "experience": {
+      "title": "Experience",
+      "cgs-team": {
+        "position": "Full-stack Developer",
+        "address": "Ukraine",
+        "description": "Developing from start to finish projects with direct client interaction, participating in all stages of development, from design and architecture to deployment and optimization.",
+        "responsibilities": [
+          "Engaged in full-stack development using the latest tools and best practices",
+          "Provided solutions for tasks and implemented them",
+          "Deployed projects and maintained them across different environments",
+          "Refactored and migrated legacy code",
+          "Participated in analysis, design, coding, and testing",
+          "Analyzing and clarifying project requirements",
+          "Estimating tasks and timelines for development cycles"
+        ]
+      },
+      "goit": {
+        "position": "React Mentor",
+        "address": "Ukraine",
+        "description": "Mentored students on the React course, providing guidance on mastering key concepts. Evaluated homework submissions and offered personalized feedback to help improve their skills.",
+        "responsibilities": [
+          "Providing guidance and support to students in understanding and implementing React concepts and best practices",
+          "Assisting students in identifying and resolving their issues",
+          "Tracking and evaluating students' progress and providing constructive feedback for improvement;",
+          "Collaborating with other mentors and instructors to improve the learning process"
+        ]
+      },
+      "softserve": {
+        "position": "Full-stack Developer",
+        "address": "Ukraine",
+        "description": "Worked on a commercial site for selling bags with an admin panel, following Scrum methodology. Actively collaborated with team members and other departments throughout the development process.",
+        "responsibilities": [
+          "Participated in analysis, design, coding, and testing",
+          "Reviewing and providing feedback on pull requests",
+          "Analyzing and clarifying project requirements",
+          "Estimating tasks and timelines for development cycles",
+          "Covering code with unit tests",
+          "Participated in Agile development meetings and followed Agile processes"
+        ]
+      }
+    }
   }
 }
