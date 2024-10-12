@@ -17,8 +17,7 @@ module.exports = {
         'spin-slow': 'spin 8s linear infinite',
       },
       backgroundImage: {
-        skillBackground:
-          'linear-gradient(261deg, #1f2739 5.73%, rgba(23, 38, 71, 0.98) 93.52%);',
+        homeBg: "url('/images/profile/home-bg.jpg')",
       },
     },
     screens: {

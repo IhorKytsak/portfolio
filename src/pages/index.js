@@ -1,14 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FormattedMessage, useIntl } from 'react-intl'
+import { useIntl } from 'react-intl'
 
 import Layout from '@/components/Layout'
 import AnimatedText from '@/components/AnimatedText'
 import HireMe from '@/components/HireMe'
 import { LinkArrow } from '@/components/Icons'
-import profilePic from '../../public/images/profile/developer-pic-1.png'
-import lightBulb from '../../public/images/svgs/miscellaneous_icons_1.svg'
+import profilePic from '../../public/images/profile/web-development.png'
 import TransitionEffect from '@/components/TransitionEffect'
 
 export default function Home({ dir }) {
@@ -72,13 +71,6 @@ export default function Home({ dir }) {
           </div>
         </Layout>
         <HireMe />
-        <div className='absolute right-8 bottom-8 inline-block w-24'>
-          <Image
-            src={lightBulb}
-            alt='Ihor'
-            className='w-full h-auto md:hidden'
-          />
-        </div>
       </main>
     </>
   )
