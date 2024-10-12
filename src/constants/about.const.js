@@ -51,3 +51,31 @@ export const experienceData = (intl) => [
     ],
   },
 ]
+
+export const skills = {
+  frontend: [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Next.js',
+    'Tailwind CSS',
+    'Material UI',
+    'Framer Motion',
+    'DOM',
+    'Unit Test',
+  ],
+  backend: [
+    'Node.js',
+    'Express',
+    'Nest.js',
+    'REST API',
+    'Validation',
+    'JWT/OAuth',
+    'SQL',
+    'Postgres',
+    'TypeOrm',
+    'Stripe',
+  ],
+  other: ['TypeScript', 'Git', 'GitHub', 'Vercel', 'Figma', 'Docker'],
+}

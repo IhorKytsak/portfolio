@@ -25,6 +25,14 @@
     "years-of-experience": "years of experience",
     "show-more-button": "Show More",
     "show-less-button": "Show Less",
+    "skills": "SKILLS",
+
+    "education": {
+      "title": "Education",
+      "type": "Bachelor Of Science In Computer Engineering",
+      "place": "Lviv Polytechnic National University",
+      "info": "Object-Oriented Programming, Data Structures and Algorithms, Computer Systems Engineering, Software Development, Network Programming and other."
+    },
 
     "experience": {
       "title": "Experience",

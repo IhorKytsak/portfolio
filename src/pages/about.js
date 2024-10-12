@@ -4,7 +4,7 @@ import { useIntl } from 'react-intl'
 
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
-import Skills from '@/components/Skills'
+import Skills from '@/components/Skills/Skills'
 import Experience from '@/components/experience/Experience'
 import Education from '@/components/Education'
 import TransitionEffect from '@/components/TransitionEffect'
@@ -77,9 +77,9 @@ const About = () => {
               />
             </div>
           </div>
-          {/* <Skills /> */}
           <Experience />
           <Education />
+          <Skills />
         </Layout>
       </main>
     </>

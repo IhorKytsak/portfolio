@@ -16,8 +16,8 @@ const Experience = () => {
   const experience = experienceData(formatMessage)
 
   return (
-    <div className='my-48'>
-      <h2 className='font-bold text-7xl mb-32 w-full text-center md:text-6xl sm:text-4xl md:mb-16'>
+    <div className='my-48 sm:my-36'>
+      <h2 className='font-bold text-7xl mb-16 w-full text-center md:text-6xl sm:text-4xl md:mb-16'>
         {formatMessage({ id: 'about.experience.title' })}
       </h2>
       <div ref={ref} className=' w-[75%] mx-auto relative lg:w-[80%] md:w-full'>
