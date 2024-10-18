@@ -11,7 +11,7 @@ export const CustomMobileLink = ({ href, title, className = '', toggle }) => {
   return (
     <button
       href={href}
-      className={`${className} relative group text-light dark:text-dark my-2`}
+      className={`${className} relative group text-light dark:text-dark`}
       onClick={handleClick}
     >
       {title}

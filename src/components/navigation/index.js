@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Logo from '../Logo'
 import { SunIcon, MoonIcon } from '../Icons'
 import { motion } from 'framer-motion'
 import { useIntl } from 'react-intl'
@@ -52,7 +51,7 @@ export const NavBar = () => {
                 key={item.titleId}
                 href={item.href}
                 title={title}
-                className='mr-4'
+                className='mr-6'
               />
             )
           })}
@@ -92,7 +91,7 @@ export const NavBar = () => {
           animate={{ scale: 1, opacity: 1 }}
           className='min-w-[70vw] flex justify-between items-center flex-col z-30 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32'
         >
-          <nav className='flex items-center flex-col justify-center'>
+          <nav className='flex items-center flex-col justify-center gap-8 mb-10'>
             {NAV_ITEMS.map((item) => {
               const title = formatMessage({ id: item.titleId })
               return (
@@ -105,43 +104,43 @@ export const NavBar = () => {
               )
             })}
           </nav>
-          <nav className='flex items-center justify-center flex-wrap mt-2 gap-y-1'>
-            {SOCIAL_ITEMS.map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.href}
-                target='_blank'
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className={`w-6 mx-1.5 sm:mx-1 ${
-                  item.name === 'github'
-                    ? 'bg-light rounded-full dark:bg-dark'
-                    : ''
+          <nav className='flex items-center justify-center flex-wrap gap-y-4'>
+            <div className='w-full flex items-center justify-center flex-wrap gap-3'>
+              <button
+                onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+                className={`ml-3 flex items-center justify-center rounded-full p-1 ${
+                  mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'
                 }`}
               >
-                {item.icon}
-              </motion.a>
-            ))}
-            <button
-              onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
-              className={`ml-3 flex items-center justify-center rounded-full p-1 ${
-                mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'
-              }`}
-            >
-              {mode === 'dark' ? (
-                <SunIcon className='fill-dark' />
-              ) : (
-                <MoonIcon className='fill-dark' />
-              )}
-            </button>
-            <LanguagePicker />
+                {mode === 'dark' ? (
+                  <SunIcon className='fill-dark' />
+                ) : (
+                  <MoonIcon className='fill-dark' />
+                )}
+              </button>
+              <LanguagePicker />
+            </div>
+            <div className='w-full flex items-center justify-center flex-wrap gap-2'>
+              {SOCIAL_ITEMS.map((item, index) => (
+                <motion.a
+                  key={index}
+                  href={item.href}
+                  target='_blank'
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={`w-6 mx-1.5 sm:mx-1 ${
+                    item.name === 'github'
+                      ? 'bg-light rounded-full dark:bg-dark'
+                      : ''
+                  }`}
+                >
+                  {item.icon}
+                </motion.a>
+              ))}
+            </div>
           </nav>
         </motion.div>
       ) : null}
-
-      {/* <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
-        <Logo />
-      </div> */}
     </header>
   )
 }

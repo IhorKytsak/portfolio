@@ -20,10 +20,6 @@ export const NAV_ITEMS = [
     titleId: 'navigation.projects',
     href: '/projects',
   },
-  {
-    titleId: 'navigation.articles',
-    href: '/articles',
-  },
 ]
 
 export const SOCIAL_ITEMS = [
@@ -42,16 +38,4 @@ export const SOCIAL_ITEMS = [
     icon: <TelegramIcon />,
     href: 'https://t.me/IhorKytsak',
   },
-  // {
-  //   icon: <TwitterIcon />,
-  //   href: 'https://twitter.com',
-  // },
-  // {
-  //   icon: <PinterestIcon />,
-  //   href: 'https://twitter.com',
-  // },
-  // {
-  //   icon: <DribbbleIcon />,
-  //   href: 'https://twitter.com',
-  // },
 ]

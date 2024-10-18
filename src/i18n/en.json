@@ -7,7 +7,11 @@
   },
   "home": {
     "head.title": "Home Page",
-    "page.title": "Turning Vision Into Reality With Code And Design."
+    "page.title": "Turning Vision Into Reality",
+    "subtitle": "As a full-stack developer, I transform creative ideas into innovative web solutions, delivering intuitive and impactful digital experiences.",
+    "resume": "Resume",
+    "contact": "Contact",
+    "copied": "Copied!"
   },
   "about": {
     "head.title": "About Page",
