@@ -51,11 +51,11 @@ export default function App({ Component, pageProps }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta
           name='description'
-          content='As a full-stack developer, I transform creative ideas into innovative web solutions, delivering intuitive and impactful digital experiences.'
+          content='Discover my full-stack development expertise in building modern, scalable web applications.'
         />
         <meta
           name='keywords'
-          content='full-stack developer, web development, React, Node.js, JavaScript, portfolio, back-end developer, fronr-end developer, Ihor Kytsak'
+          content='full-stack developer, web development, React, Node.js, JavaScript, portfolio, back-end developer, front-end developer, Ihor Kytsak, developer'
         />
 
         <meta name='author' content='Ihor Kytsak' />
