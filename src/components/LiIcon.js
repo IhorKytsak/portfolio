@@ -1,11 +1,6 @@
-import { motion, useScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-const LiIcon = ({ reference }) => {
-  const { scrollYProgress } = useScroll({
-    target: reference,
-    offset: ['center end', 'center center'],
-  })
-
+const LiIcon = ({ scrollYProgress }) => {
   return (
     <figure className='absolute left-0 stroke-dark dark:stroke-light'>
       <svg

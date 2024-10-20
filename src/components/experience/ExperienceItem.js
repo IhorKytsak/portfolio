@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { useIntl } from 'react-intl'
 
@@ -16,6 +16,11 @@ const ExperienceItem = ({
   const ref = useRef(null)
   const [isExpanded, setIsExpanded] = useState(false)
 
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['center end', 'center center'],
+  })
+
   const { formatMessage } = useIntl()
 
   const handleToggle = () => {
@@ -27,7 +32,7 @@ const ExperienceItem = ({
       ref={ref}
       className='my-8 first:mt-0 last:mb-0 w-[70%] mx-auto flex flex-col items-center justify-between md:w-[80%]'
     >
-      <LiIcon reference={ref} />
+      <LiIcon scrollYProgress={scrollYProgress} />
       <motion.div
         initial={{ y: 50 }}
         whileInView={{ y: 0 }}

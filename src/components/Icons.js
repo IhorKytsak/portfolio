@@ -59,7 +59,7 @@ export const TelegramIcon = ({ className, ...rest }) => (
     x='0px'
     y='0px'
     width='28px'
-    height='auto'
+    height='28px'
     viewBox='0 0 48 48'
     className={`${className}`}
     {...rest}

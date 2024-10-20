@@ -49,7 +49,44 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta
+          name='description'
+          content='As a full-stack developer, I transform creative ideas into innovative web solutions, delivering intuitive and impactful digital experiences.'
+        />
+        <meta
+          name='keywords'
+          content='full-stack developer, web development, React, Node.js, JavaScript, portfolio, back-end developer, fronr-end developer, Ihor Kytsak'
+        />
+
+        <meta name='author' content='Ihor Kytsak' />
+
+        <link rel='icon' href='/favicon.ico' sizes='any' />
+        <link
+          rel='icon'
+          href='/favicon-16x16.png'
+          sizes='16x16'
+          type='image/png'
+        />
+        <link
+          rel='icon'
+          href='/favicon-32x32.png'
+          sizes='32x32'
+          type='image/png'
+        />
+        <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
+        <link
+          rel='icon'
+          href='/android-chrome-192x192.png'
+          sizes='192x192'
+          type='image/png'
+        />
+        <link
+          rel='icon'
+          href='/android-chrome-512x512.png'
+          sizes='512x512'
+          type='image/png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
       </Head>
       <main
         className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}

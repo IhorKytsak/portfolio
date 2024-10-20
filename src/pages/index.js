@@ -56,8 +56,8 @@ export default function Home({ dir }) {
                   <Link
                     href={`${baseUrl}/CV.pdf`}
                     target='_blank'
-                    className='flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-transparent border-2 border-solid hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light
-                  md:p-2 md:px-4 md:text-base'
+                    className='flex items-center bg-dark text-light py-2 px-4 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-transparent border-2 border-solid hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light
+                  md:py-1.5 md:px-3 md:text-base'
                     // download={true}
                   >
                     {formatMessage({ id: 'home.resume' })}{' '}

@@ -6,7 +6,7 @@ const LanguagePicker = () => {
   const { locales, locale, pathname } = useRouter()
 
   return (
-    <div className='flex items-center justify-center ml-2 divide-x divide-dark dark:divide-light lg:divide-light lg:dark:divide-dark lg:text-light lg:dark:text-dark'>
+    <div className='flex items-center justify-center ml-2 divide-x divide-dark dark:divide-light lg:divide-dark lg:dark:divide-light lg:text-dark lg:dark:text-light'>
       {[...locales].sort().map((l) => (
         <Link key={l} href={pathname} locale={l}>
           <motion.div
