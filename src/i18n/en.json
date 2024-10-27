@@ -79,5 +79,9 @@
         ]
       }
     }
+  },
+  "projects": {
+    "head.title": "Projects Page",
+    "title": "Explore My Expertise in Crafting Scalable, Impactful Web Solutions — Each with Its Own Story and Purpose."
   }
 }
