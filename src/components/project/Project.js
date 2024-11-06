@@ -2,10 +2,12 @@ import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useAnimate } from 'framer-motion'
+import { useIntl } from 'react-intl'
 
 import { ClickIcon, GithubIcon, LinkArrow } from '@/components/Icons'
 
 export const Project = ({ item, handleOpenModal }) => {
+  const { formatMessage } = useIntl()
   const [scope, animate] = useAnimate()
 
   const linkRef = useRef()
@@ -54,12 +56,10 @@ export const Project = ({ item, handleOpenModal }) => {
               onMouseOver={handleouseOver(linkRef)}
               onMouseOut={handleouseOut(linkRef)}
             >
-              {/* Main button content */}
-              <p>Visit</p>
+              {formatMessage({ id: 'projects.visit' })}
               <div ref={linkRef}>
                 <LinkArrow className='w-7' />
               </div>
-              {/* Animated border */}
             </Link>
           )}
           {item?.gitHubUrl && (
@@ -70,7 +70,7 @@ export const Project = ({ item, handleOpenModal }) => {
               onMouseOver={handleouseOver(gitRef)}
               onMouseOut={handleouseOut(gitRef)}
             >
-              More
+              {formatMessage({ id: 'projects.more' })}
               <div ref={gitRef} className='w-7'>
                 <GithubIcon />
               </div>

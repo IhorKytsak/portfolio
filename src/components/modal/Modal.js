@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose, children, initialPosition }) => {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
         type: 'spring',
         damping: 25,
         stiffness: 500,
@@ -37,9 +37,9 @@ const Modal = ({ isOpen, onClose, children, initialPosition }) => {
         exit={{ opacity: 0 }}
         className='absolute inset-0 bg-black'
         onClick={onClose}
-      ></motion.div>
+      />
       <motion.div
-        className='relative z-50 bg-white dark:bg-dark2 text-dark dark:text-light rounded-lg p-6 w-full max-w-3xl xs:max-w-[90vw] md:max-w-md lg:max-w-2xl mx-auto shadow-lg max-h-[85dvh] overflow-auto'
+        className='scrollbar relative z-50 bg-light dark:bg-dark text-dark dark:text-light rounded-lg p-6 w-full max-w-3xl xs:max-w-[90vw] md:max-w-md lg:max-w-2xl mx-auto shadow-lg max-h-[85dvh] overflow-auto'
         variants={dropIn}
         initial='hidden'
         animate='visible'

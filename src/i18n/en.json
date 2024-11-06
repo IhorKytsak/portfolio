@@ -82,6 +82,16 @@
   },
   "projects": {
     "head.title": "Projects Page",
-    "title": "Explore My Expertise in Crafting Scalable, Impactful Web Solutions — Each with Its Own Story and Purpose."
+    "title": "Explore My Expertise in Crafting Scalable, Impactful Web Solutions — Each with Its Own Story and Purpose.",
+    "visit": "Visit",
+    "more": "More",
+    "view-more": "View Full Image",
+
+    "todo": {
+      "description": "This advanced Todo app is built with a React frontend, Express and Node.js backend, and PostgreSQL database using TypeORM. It includes authorization features such as registration, password reset, and password change. Todos can be public or private: public Todos are viewable by all without logging in, while private Todos are accessible only to their owner. The app is fully responsive with adaptive Todo views for different devices: infinite scroll on mobile, infinite slider on tablet, and table view on desktop. Users can add, edit, filter, and search Todos. For more details, visit the Todo app GitHub repository."
+    },
+    "chat": {
+      "description": "This is a simple chat app developed as a fast solution to meet specific requirements within a time-constrained technical task for a company interview. The app demonstrates a clean and functional UI, along with a responsive design for optimal performance across devices, highlighting my ability to quickly deliver effective, user-friendly interfaces."
+    }
   }
 }

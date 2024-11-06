@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { useIntl } from 'react-intl'
+
 import { ChevronLeft, ChevronRight } from '../Icons'
 
 const Slider = ({ images = [] }) => {
+  const { formatMessage } = useIntl()
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleNext = () => {
@@ -28,7 +31,7 @@ const Slider = ({ images = [] }) => {
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.6 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className='relative w-full h-full flex items-center justify-center'
         >
           <Image
@@ -68,7 +71,7 @@ const Slider = ({ images = [] }) => {
         rel='noopener noreferrer'
         className='absolute top-2 text-white bg-dark/60 px-3 py-1 rounded-lg text-sm hover:bg-dark/90 transition-colors duration-300'
       >
-        View Full Image
+        {formatMessage({ id: 'projects.view-more' })}
       </a>
     </div>
   )

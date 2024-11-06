@@ -8,7 +8,7 @@ import AnimatedText from '@/components/AnimatedText'
 import TransitionEffect from '@/components/TransitionEffect'
 import Modal from '@/components/modal/Modal'
 
-import { projects } from '@/constants/projects.const'
+import { myProjects } from '@/constants/projects.const'
 import { Project } from '@/components/project/Project'
 import useProjectDetailModal from '@/hooks/useProjectDetailModal'
 import ProjectDetails from '@/components/project/ProjectDetails'
@@ -24,6 +24,8 @@ const Projects = () => {
     setModalData(project)
   }
 
+  const projects = myProjects(formatMessage)
+
   return (
     <>
       <Head>
@@ -38,13 +40,11 @@ const Projects = () => {
             className='mb-16 !text-3xl lg:!text-2xl sm:mb-8 sm:!text-xl xs:!text-lg'
           />
           <div className='grid grid-cols-12 gap-24 gap-y-28 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
-            <div className='col-span-6 md:col-span-12'>
-              {projects.map((project, index) => (
-                <div key={index} className='col-span-6 md:col-span-12'>
-                  <Project item={project} handleOpenModal={handleOpenModal} />
-                </div>
-              ))}
-            </div>
+            {projects.map((project, index) => (
+              <div key={index} className='col-span-6 md:col-span-12'>
+                <Project item={project} handleOpenModal={handleOpenModal} />
+              </div>
+            ))}
           </div>
         </Layout>
       </main>
@@ -59,7 +59,7 @@ const Projects = () => {
             description={modalData?.description}
             title={modalData?.title}
             images={modalData?.images}
-            technologies={['React', 'HTML', 'CSS']}
+            technologies={modalData?.technologies}
           />
         </Modal>
       </AnimatePresence>
