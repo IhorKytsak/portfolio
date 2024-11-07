@@ -6,7 +6,7 @@ const ProjectDetails = ({ title, images, description, technologies }) => {
     <>
       <h2 className='text-xl font-semibold mb-4'>{title}</h2>
       <Slider images={images} />
-      <p className='my-4 text-sm'>{description}</p>
+      <p className='my-5 text-sm'>{description}</p>
 
       <TechnologyTags technologies={technologies} />
     </>

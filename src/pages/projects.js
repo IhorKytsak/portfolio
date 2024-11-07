@@ -39,9 +39,9 @@ const Projects = () => {
             text={formatMessage({ id: 'projects.title' })}
             className='mb-16 !text-3xl lg:!text-2xl sm:mb-8 sm:!text-xl xs:!text-lg'
           />
-          <div className='grid grid-cols-12 gap-24 gap-y-28 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
+          <div className='grid grid-cols-12 gap-16  lg:gap-x-8 md:grid-cols-6'>
             {projects.map((project, index) => (
-              <div key={index} className='col-span-6 md:col-span-12'>
+              <div key={index} className='col-span-6'>
                 <Project item={project} handleOpenModal={handleOpenModal} />
               </div>
             ))}

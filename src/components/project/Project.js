@@ -21,7 +21,7 @@ export const Project = ({ item, handleOpenModal }) => {
   }
 
   return (
-    <article className='w-full flex flex-col items-center justify-center rounded-2xl bg-light2 shadow-md shadow-dark dark:shadow-light relative dark:bg-dark2 transition-shadow duration-300 ease-in-out overflow-hidden'>
+    <article className='w-full h-full flex flex-col items-center justify-center rounded-2xl bg-light2 shadow-md shadow-dark dark:shadow-light relative dark:bg-dark2 transition-shadow duration-300 ease-in-out overflow-hidden'>
       <div
         onClick={(event) => handleOpenModal(item, event)}
         className='relative w-full h-full cursor-pointer group'
@@ -29,13 +29,11 @@ export const Project = ({ item, handleOpenModal }) => {
         <Image
           src={item.images[0]}
           alt={item.title}
-          className='w-full h-auto group-hover:scale-105 duration-300'
+          className='w-full h-full group-hover:scale-105 duration-300'
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
           priority
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'
         />
-        {/* Hover Icon */}
         <div className='absolute inset-0 flex items-center justify-center group-hover:scale-90 duration-300'>
           <ClickIcon />
         </div>

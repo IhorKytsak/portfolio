@@ -1,6 +1,6 @@
 const TechnologyTags = ({ technologies }) => {
   return (
-    <div className='flex flex-wrap gap-2 mt-4'>
+    <div className='flex flex-wrap gap-2 my-1'>
       {technologies.map((tech, index) => (
         <span
           key={index}

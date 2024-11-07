@@ -91,7 +91,34 @@
       "description": "This advanced Todo app is built with a React frontend, Express and Node.js backend, and PostgreSQL database using TypeORM. It includes authorization features such as registration, password reset, and password change. Todos can be public or private: public Todos are viewable by all without logging in, while private Todos are accessible only to their owner. The app is fully responsive with adaptive Todo views for different devices: infinite scroll on mobile, infinite slider on tablet, and table view on desktop. Users can add, edit, filter, and search Todos. For more details, visit the Todo app GitHub repository."
     },
     "chat": {
-      "description": "This is a simple chat app developed as a fast solution to meet specific requirements within a time-constrained technical task for a company interview. The app demonstrates a clean and functional UI, along with a responsive design for optimal performance across devices, highlighting my ability to quickly deliver effective, user-friendly interfaces."
+      "description": "This is a simple chat app developed as a quick solution to meet specific requirements within a time-constrained technical task for a company interview. The app demonstrates a clean and functional UI, along with a responsive design for different devices, highlighting my ability to quickly deliver effective, user-friendly interfaces according to requirements."
+    },
+    "game-site": {
+      "description": "One of my first projects, where I practiced using the Bootstrap library with plain HTML and CSS."
+    },
+    "health-care-center": {
+      "description": "One of my first projects, where I practiced creating responsive layouts using CSS Flexbox."
+    },
+    "yummy-meals": {
+      "description": "Project created while completing a React course, using Firebase as the database."
+    },
+    "black-white": {
+      "description": "An early project focused on building responsive website layouts."
+    },
+    "hiking-club": {
+      "description": "An early project focused on building responsive website layouts with dark theme."
+    },
+    "active-box": {
+      "description": "An early project focused on building responsive website layouts with dark theme."
+    },
+    "fan-club": {
+      "description": "A responsive website project that I thoroughly enjoyed working on during the early stages of my development journey. It was a technical task with minimal restrictions: I was limited to using plain HTML and CSS, adaptive design, and a basic site blueprint. The website includes two main pages—Home and Fans—which are fully functional and ready to explore, while the remaining pages are left blank."
+    },
+    "mobile-shop": {
+      "description": "My first website built with React under the guidance of my mentor, and my first experience using a relational database with an Express server. Good old days!"
+    },
+    "expense-tracker": {
+      "description": "A project to practice the basics of React."
     }
   }
 }
