@@ -99,7 +99,7 @@ export default function App({ Component, pageProps }) {
           <AnimatePresence mode='wait'>
             <Component key={asPath} {...pageProps} dir={getDirection(locale)} />
           </AnimatePresence>
-          <Footer />
+          {/* <Footer /> */}
         </IntlProvider>
       </main>
     </>

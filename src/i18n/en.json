@@ -119,6 +119,9 @@
     },
     "expense-tracker": {
       "description": "A project to practice the basics of React."
+    },
+    "marketplace": {
+      "description": "This blockchain project encompasses the creation of an ERC-20 token, an ERC-721 (NFT) contract, and a marketplace contract, developed using Hardhat for seamless contract creation, testing, and deployment on the Sepolia test network. The marketplace application, while featuring a streamlined UI to focus on blockchain functionality, delivers a user-friendly experience with effective error handling, MetaMask login integration, and secure NFT trading powered by my ERC-20 tokens.NFTs within this ecosystem are dynamically generated images, stored on Pinata IPFS for decentralized storage, and accessible on OpenSea. The application also tracks the status of transactions, updating the UI accordingly to keep users informed about the progress of their trades."
     }
   }
 }

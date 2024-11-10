@@ -30,9 +30,9 @@ export default function Home({ dir }) {
       <TransitionEffect />
       <main
         dir={dir}
-        className='flex items-center text-dark w-full min-h-screen dark:text-light'
+        className='flex items-center text-dark w-full min-h-[calc(100dvh-96px)] dark:text-light'
       >
-        <Layout className='pt-0 md:pt-16 sm:pt-8'>
+        <Layout className='pt-8 md:pt-16 sm:pt-8'>
           <div className='flex items-center justify-between w-full lg:flex-col'>
             <div className='w-1/2 md:w-full'>
               <Image

@@ -49,7 +49,37 @@ import mobileShop3 from '../../public/images/projects/mobile-shop-3.png'
 
 import expenceTracker from '../../public/images/projects/expence-tracker.png'
 
+import marketplace from '../../public/images/projects/marketplace.png'
+import marketplace2 from '../../public/images/projects/marketplace-2.png'
+import marketplace3 from '../../public/images/projects/marketplace-3.png'
+
 export const myProjects = (intl) => [
+  {
+    title: 'NFT Marketplace',
+    description: intl({ id: 'projects.marketplace.description' }),
+    images: [marketplace, marketplace2, marketplace3],
+    gitHubUrl: 'https://github.com/IhorKytsak/erc20-token-front',
+    technologies: [
+      'NodeJS',
+      'TypeScript',
+      'Solidity',
+      'Hardhat',
+      'Smart Contract',
+      'ERC-20',
+      'ERC-721',
+      'Ethers',
+      'NFT',
+      'MetaMask',
+      'Openzeppelin',
+      'Canvas',
+      'Hardhat Toolbox',
+      'Sepolia',
+      'Pinata',
+      'OpenSea',
+      'React',
+      'Material UI',
+    ],
+  },
   {
     title: 'Todo App',
     description: intl({ id: 'projects.todo.description' }),
@@ -91,6 +121,7 @@ export const myProjects = (intl) => [
     visitUrl: 'https://ihorkytsak.github.io/internet-shop',
     technologies: ['React', 'Express', 'MongoDB', 'Mongoose', 'Axios'],
   },
+
   {
     title: 'Fan Club',
     description: intl({ id: 'projects.fan-club.description' }),
