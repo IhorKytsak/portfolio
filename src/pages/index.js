@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,13 +12,6 @@ import GetEmail from '@/components/GetEmail'
 
 export default function Home({ dir }) {
   const { formatMessage } = useIntl()
-  const [baseUrl, setBaseUrl] = useState('')
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setBaseUrl(window.location.origin)
-    }
-  }, [])
 
   return (
     <>
@@ -52,10 +44,10 @@ export default function Home({ dir }) {
                 {formatMessage({ id: 'home.subtitle' })}
               </p>
               <div className='flex items-center self-start mt-2 lg:self-center'>
-                {baseUrl && (
-                  <Link
-                    href={`${baseUrl}/CV.pdf`}
-                    target='_blank'
+                <Link
+                  href='/CV.pdf'
+                  locale={false}
+                  target='_blank'
                     className='flex items-center bg-dark text-light py-2 px-4 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-transparent border-2 border-solid hover:border-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light hover:dark:border-light
                   md:py-1.5 md:px-3 md:text-base'
                     // download={true}
@@ -63,7 +55,6 @@ export default function Home({ dir }) {
                     {formatMessage({ id: 'home.resume' })}{' '}
                     <LinkArrow className='w-6 ml-1' />
                   </Link>
-                )}
                 <GetEmail />
               </div>
             </div>

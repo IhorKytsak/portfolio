@@ -13,11 +13,17 @@ export const Project = ({ item, handleOpenModal }) => {
   const linkRef = useRef()
   const gitRef = useRef()
 
-  const handleouseOver = (ref) => () => {
-    animate(ref.current, { x: 5 }, { duration: 0.3 })
+  const handleLinkMouseOver = () => {
+    animate(linkRef.current, { x: 5 }, { duration: 0.3 })
   }
-  const handleouseOut = (ref) => () => {
-    animate(ref.current, { x: 0 }, { duration: 0.3 })
+  const handleLinkMouseOut = () => {
+    animate(linkRef.current, { x: 0 }, { duration: 0.3 })
+  }
+  const handleGitMouseOver = () => {
+    animate(gitRef.current, { x: 5 }, { duration: 0.3 })
+  }
+  const handleGitMouseOut = () => {
+    animate(gitRef.current, { x: 0 }, { duration: 0.3 })
   }
 
   return (
@@ -51,8 +57,8 @@ export const Project = ({ item, handleOpenModal }) => {
               href={item.visitUrl}
               target='_blank'
               className='flex items-center gap-2 border border-solid border-dark dark:border-light rounded-xl px-5 py-2 sm:px-3 sm:py-1.5'
-              onMouseOver={handleouseOver(linkRef)}
-              onMouseOut={handleouseOut(linkRef)}
+              onMouseOver={handleLinkMouseOver}
+              onMouseOut={handleLinkMouseOut}
             >
               {formatMessage({ id: 'projects.visit' })}
               <div ref={linkRef}>
@@ -65,8 +71,8 @@ export const Project = ({ item, handleOpenModal }) => {
               href={item.gitHubUrl}
               target='_blank'
               className='flex items-center gap-2 border border-solid border-dark dark:border-light rounded-xl px-5 py-2 sm:px-3 sm:py-1.5'
-              onMouseOver={handleouseOver(gitRef)}
-              onMouseOut={handleouseOut(gitRef)}
+              onMouseOver={handleGitMouseOver}
+              onMouseOut={handleGitMouseOut}
             >
               {formatMessage({ id: 'projects.more' })}
               <div ref={gitRef} className='w-7'>
