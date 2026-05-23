@@ -1,12 +1,14 @@
+'use client'
+
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { useIntl } from 'react-intl'
+import { useTranslations } from 'next-intl'
 
 import { ChevronLeft, ChevronRight } from '../Icons'
 
 const Slider = ({ images = [] }) => {
-  const { formatMessage } = useIntl()
+  const t = useTranslations()
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleNext = () => {
@@ -71,7 +73,7 @@ const Slider = ({ images = [] }) => {
         rel='noopener noreferrer'
         className='absolute top-2 text-white bg-dark/60 px-3 py-1 rounded-lg text-sm hover:bg-dark/90 transition-colors duration-300'
       >
-        {formatMessage({ id: 'projects.view-more' })}
+        {t('projects.view-more')}
       </a>
     </div>
   )

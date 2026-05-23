@@ -1,7 +1,9 @@
+'use client'
+
 import { useState } from 'react'
 import { SunIcon, MoonIcon } from '../Icons'
 import { motion } from 'framer-motion'
-import { useIntl } from 'react-intl'
+import { useTranslations } from 'next-intl'
 
 import useThemeSwitcher from '@/hooks/useThemeSwitcher'
 import LanguagePicker from '../LanguagePicker'
@@ -13,7 +15,7 @@ export const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher()
   const [isOpen, setIsOpen] = useState(false)
 
-  const { formatMessage } = useIntl()
+  const t = useTranslations()
 
   const handleClick = () => {
     setIsOpen(!isOpen)
@@ -45,7 +47,7 @@ export const NavBar = () => {
       <div className='w-full flex justify-between items-center lg:hidden  '>
         <nav>
           {NAV_ITEMS.map((item) => {
-            const title = formatMessage({ id: item.titleId })
+            const title = t(item.titleId)
             return (
               <CustomLink
                 key={item.titleId}
@@ -93,7 +95,7 @@ export const NavBar = () => {
         >
           <nav className='flex items-center flex-col justify-center gap-8 mb-10'>
             {NAV_ITEMS.map((item) => {
-              const title = formatMessage({ id: item.titleId })
+              const title = t(item.titleId)
               return (
                 <CustomMobileLink
                   key={item.titleId}

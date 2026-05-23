@@ -1,11 +1,13 @@
+'use client'
+
 import { useState } from 'react'
-import { useIntl } from 'react-intl'
+import { useTranslations } from 'next-intl'
 
 import { CopyIcon } from '@/components/Icons'
 import { EMAIL } from '@/constants/general.const'
 
 export default function GetEmail() {
-  const { formatMessage } = useIntl()
+  const t = useTranslations()
   const [copied, setCopied] = useState(false)
 
   const copyToClipboard = async () => {
@@ -24,9 +26,7 @@ export default function GetEmail() {
       onClick={copyToClipboard}
       className='ml-5 flex items-center text-lg font-medium capitalize text-dark underline dark:text-light md:text-base'
     >
-      {copied
-        ? formatMessage({ id: 'home.copied' })
-        : formatMessage({ id: 'home.contact' })}
+      {copied ? t('home.copied') : t('home.contact')}
       <CopyIcon className='w-6 ml-3' />
     </button>
   )

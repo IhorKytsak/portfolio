@@ -1,11 +1,13 @@
+'use client'
+
 import { useState } from 'react'
-import { useIntl } from 'react-intl'
+import { useTranslations } from 'next-intl'
 
 import SkillList from './SkillList'
 import { skills } from '@/constants/about.const'
 
 export default function Skills() {
-  const { formatMessage } = useIntl()
+  const t = useTranslations()
 
   const [hoveredList, setHoveredList] = useState(null)
 
@@ -30,7 +32,7 @@ export default function Skills() {
               : 'border-dark dark:border-light'
           } sm:text-2xl sm:px-12 sm:py-2`}
         >
-          {formatMessage({ id: 'about.skills' })}
+          {t('about.skills')}
         </h2>
         <div className='relative h-20 sm:h-10 w-full '>
           <div

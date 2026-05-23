@@ -1,24 +1,26 @@
+'use client'
+
 import { useRef } from 'react'
-import { useIntl } from 'react-intl'
+import { useTranslations } from 'next-intl'
 import { motion, useScroll } from 'framer-motion'
 
 import ExperienceItem from './ExperienceItem'
 import { experienceData } from '@/constants/about.const'
 
 const Experience = () => {
-  const { formatMessage } = useIntl()
+  const t = useTranslations()
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'center start'],
   })
 
-  const experience = experienceData(formatMessage)
+  const experience = experienceData(t)
 
   return (
     <div className='my-48 sm:my-36'>
       <h2 className='font-bold text-7xl mb-16 w-full text-center md:text-6xl sm:text-4xl md:mb-16'>
-        {formatMessage({ id: 'about.experience.title' })}
+        {t('about.experience.title')}
       </h2>
       <div ref={ref} className=' w-[75%] mx-auto relative lg:w-[80%] md:w-full'>
         <motion.div

@@ -53,10 +53,10 @@ import marketplace from '../../public/images/projects/marketplace.png'
 import marketplace2 from '../../public/images/projects/marketplace-2.png'
 import marketplace3 from '../../public/images/projects/marketplace-3.png'
 
-export const myProjects = (intl) => [
+export const myProjects = (t) => [
   {
     title: 'NFT Marketplace',
-    description: intl({ id: 'projects.marketplace.description' }),
+    description: t('projects.marketplace.description'),
     images: [marketplace, marketplace2, marketplace3],
     gitHubUrl: 'https://github.com/IhorKytsak/erc20-token-front',
     technologies: [
@@ -82,7 +82,7 @@ export const myProjects = (intl) => [
   },
   {
     title: 'Todo App',
-    description: intl({ id: 'projects.todo.description' }),
+    description: t('projects.todo.description'),
     images: [
       todoApp,
       todoPublic,
@@ -115,7 +115,7 @@ export const myProjects = (intl) => [
   },
   {
     title: 'Mobile Shop',
-    description: intl({ id: 'projects.mobile-shop.description' }),
+    description: t('projects.mobile-shop.description'),
     images: [mobileShop, mobileShop2, mobileShop3],
     gitHubUrl: 'https://github.com/IhorKytsak/internet-shop',
     visitUrl: 'https://ihorkytsak.github.io/internet-shop',
@@ -124,7 +124,7 @@ export const myProjects = (intl) => [
 
   {
     title: 'Fan Club',
-    description: intl({ id: 'projects.fan-club.description' }),
+    description: t('projects.fan-club.description'),
     images: [funClub, funClub2, funClub3],
     gitHubUrl: 'https://github.com/IhorKytsak/Sport-site',
     visitUrl: 'https://ihorkytsak.github.io/Sport-site/index.html',
@@ -133,7 +133,7 @@ export const myProjects = (intl) => [
 
   {
     title: 'Chat App',
-    description: intl({ id: 'projects.chat.description' }),
+    description: t('projects.chat.description'),
     images: [chatApp],
     gitHubUrl: 'https://github.com/IhorKytsak/react-chat-app',
     visitUrl: 'https://ihorkytsak.github.io/react-chat-app/',
@@ -141,7 +141,7 @@ export const myProjects = (intl) => [
   },
   {
     title: 'Expense Tracker',
-    description: intl({ id: 'projects.expense-tracker.description' }),
+    description: t('projects.expense-tracker.description'),
     images: [expenceTracker],
     gitHubUrl: 'https://github.com/IhorKytsak/Expense-tracker-react',
     visitUrl: 'https://ihorkytsak.github.io/Expense-tracker-react/',
@@ -149,7 +149,7 @@ export const myProjects = (intl) => [
   },
   {
     title: 'ActiveBox',
-    description: intl({ id: 'projects.active-box.description' }),
+    description: t('projects.active-box.description'),
     images: [activeBox, activeBox2, activeBox3, activeBox4, activeBox5],
     gitHubUrl: 'https://github.com/IhorKytsak/ActiveBox',
     visitUrl: 'https://ihorkytsak.github.io/ActiveBox/',
@@ -157,7 +157,7 @@ export const myProjects = (intl) => [
   },
   {
     title: 'Yummy Meals',
-    description: intl({ id: 'projects.yummy-meals.description' }),
+    description: t('projects.yummy-meals.description'),
     images: [yummyMeals, yummyMeals2],
     gitHubUrl: 'https://github.com/IhorKytsak/Food-order-app',
     visitUrl: 'https://ihorkytsak.github.io/Food-order-app/',
@@ -165,7 +165,7 @@ export const myProjects = (intl) => [
   },
   {
     title: 'Health Care Center',
-    description: intl({ id: 'projects.health-care-center.description' }),
+    description: t('projects.health-care-center.description'),
     images: [healthCare, healthCare2, healthCare3, healthCare4, healthCare5],
     gitHubUrl: 'https://github.com/IhorKytsak/health-care-center',
     visitUrl: 'https://ihorkytsak.github.io/health-care-center/',
@@ -173,21 +173,21 @@ export const myProjects = (intl) => [
   },
   {
     title: 'Black-White',
-    description: intl({ id: 'projects.black-white.description' }),
+    description: t('projects.black-white.description'),
     images: [blackWhite, blackWhite2, blackWhite3],
     gitHubUrl: 'https://github.com/IhorKytsak/Black-White',
     technologies: ['HTML', 'CSS'],
   },
   {
     title: 'Peaks Hiking Club',
-    description: intl({ id: 'projects.hiking-club.description' }),
+    description: t('projects.hiking-club.description'),
     images: [hikingClub, hikingClub2, hikingClub3],
     gitHubUrl: 'https://github.com/IhorKytsak/Black-White',
     technologies: ['HTML', 'SCSS'],
   },
   {
     title: 'Game site(Bootstrap)',
-    description: intl({ id: 'projects.game-site.description' }),
+    description: t('projects.game-site.description'),
     images: [gameSite, gameSite2, gameSite3, gameSite4],
     gitHubUrl: 'https://github.com/IhorKytsak/Game-site-bootstrap',
     visitUrl: 'https://ihorkytsak.github.io/Game-site-bootstrap/',

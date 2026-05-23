@@ -1,13 +1,17 @@
-import { useRouter } from 'next/router'
+'use client'
+
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { Link, usePathname } from '@/i18n/navigation'
+import { useLocale } from 'next-intl'
+import { routing } from '@/i18n/routing'
 
 const LanguagePicker = () => {
-  const { locales, locale, pathname } = useRouter()
+  const pathname = usePathname()
+  const locale = useLocale()
 
   return (
     <div className='flex items-center justify-center ml-2 divide-x divide-dark dark:divide-light lg:divide-dark lg:dark:divide-light lg:text-dark lg:dark:text-light'>
-      {[...locales].sort().map((l) => (
+      {[...routing.locales].sort().map((l) => (
         <Link key={l} href={pathname} locale={l}>
           <motion.div
             whileHover={{ y: -2 }}

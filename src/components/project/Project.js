@@ -1,13 +1,15 @@
+'use client'
+
 import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useAnimate } from 'framer-motion'
-import { useIntl } from 'react-intl'
+import { useTranslations } from 'next-intl'
 
 import { ClickIcon, GithubIcon, LinkArrow } from '@/components/Icons'
 
 export const Project = ({ item, handleOpenModal }) => {
-  const { formatMessage } = useIntl()
+  const t = useTranslations()
   const [scope, animate] = useAnimate()
 
   const linkRef = useRef()
@@ -60,7 +62,7 @@ export const Project = ({ item, handleOpenModal }) => {
               onMouseOver={handleLinkMouseOver}
               onMouseOut={handleLinkMouseOut}
             >
-              {formatMessage({ id: 'projects.visit' })}
+              {t('projects.visit')}
               <div ref={linkRef}>
                 <LinkArrow className='w-7' />
               </div>
@@ -74,7 +76,7 @@ export const Project = ({ item, handleOpenModal }) => {
               onMouseOver={handleGitMouseOver}
               onMouseOut={handleGitMouseOut}
             >
-              {formatMessage({ id: 'projects.more' })}
+              {t('projects.more')}
               <div ref={gitRef} className='w-7'>
                 <GithubIcon />
               </div>

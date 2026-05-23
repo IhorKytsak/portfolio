@@ -1,6 +1,8 @@
+'use client'
+
 import { motion, useScroll } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { useIntl } from 'react-intl'
+import { useTranslations } from 'next-intl'
 
 import LiIcon from '../LiIcon'
 
@@ -21,7 +23,7 @@ const ExperienceItem = ({
     offset: ['center end', 'center center'],
   })
 
-  const { formatMessage } = useIntl()
+  const t = useTranslations()
 
   const handleToggle = () => {
     setIsExpanded((prev) => !prev)
@@ -83,8 +85,8 @@ const ExperienceItem = ({
           className='mt-4 text-primary dark:text-primaryDark underline cursor-pointer'
         >
           {isExpanded
-            ? formatMessage({ id: 'about.show-less-button' })
-            : formatMessage({ id: 'about.show-more-button' })}
+            ? t('about.show-less-button')
+            : t('about.show-more-button')}
         </button>
       </motion.div>
     </li>

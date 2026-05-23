@@ -1,6 +1,8 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import { useIntl } from 'react-intl'
+import { useTranslations } from 'next-intl'
 
 const Details = ({ type, time, place, info }) => {
   const ref = useRef(null)
@@ -29,18 +31,18 @@ const Details = ({ type, time, place, info }) => {
 
 const Education = () => {
   const ref = useRef(null)
-  const { formatMessage } = useIntl()
+  const t = useTranslations()
   return (
     <div className='my-32 sm:my-36'>
       <h2 className='font-bold text-7xl mb-16 w-full text-center md:text-6xl sm:text-4xl'>
-        {formatMessage({ id: 'about.education.title' })}
+        {t('about.education.title')}
       </h2>
       <div ref={ref} className='w-[75%] mx-auto relative lg:w-[80%] md:w-full'>
         <Details
-          type={formatMessage({ id: 'about.education.type' })}
+          type={t('about.education.type')}
           time='2014-2018'
-          place={formatMessage({ id: 'about.education.place' })}
-          info={formatMessage({ id: 'about.education.info' })}
+          place={t('about.education.place')}
+          info={t('about.education.info')}
         />
       </div>
     </div>

@@ -1,6 +1,7 @@
+'use client'
+
 import { useState } from 'react'
-import { useIntl } from 'react-intl'
-import Head from 'next/head'
+import { useTranslations } from 'next-intl'
 import { AnimatePresence } from 'framer-motion'
 
 import Layout from '@/components/Layout'
@@ -13,8 +14,8 @@ import { Project } from '@/components/project/Project'
 import useProjectDetailModal from '@/hooks/useProjectDetailModal'
 import ProjectDetails from '@/components/project/ProjectDetails'
 
-const Projects = () => {
-  const { formatMessage } = useIntl()
+export default function ProjectsPage() {
+  const t = useTranslations()
 
   const { modalData, open, setModalData } = useProjectDetailModal()
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 })
@@ -24,19 +25,15 @@ const Projects = () => {
     setModalData(project)
   }
 
-  const projects = myProjects(formatMessage)
+  const projects = myProjects(t)
 
   return (
     <>
-      <Head>
-        <title>{formatMessage({ id: 'projects.head.title' })}</title>
-        <meta name='description' content='any desc' />
-      </Head>
       <TransitionEffect />
-      <main className='w-full flex flex-col items-center justify-center dark:text-light'>
+      <div className='w-full flex flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText
-            text={formatMessage({ id: 'projects.title' })}
+            text={t('projects.title')}
             className='mb-16 !text-3xl lg:!text-2xl sm:mb-8 sm:!text-xl xs:!text-lg'
           />
           <div className='grid grid-cols-12 gap-16  lg:gap-x-8 md:grid-cols-6'>
@@ -47,7 +44,7 @@ const Projects = () => {
             ))}
           </div>
         </Layout>
-      </main>
+      </div>
       <AnimatePresence initial={false} mode='wait' onExitComplete={() => null}>
         <Modal
           key={open ? 'open' : 'closed'}
@@ -66,5 +63,3 @@ const Projects = () => {
     </>
   )
 }
-
-export default Projects
