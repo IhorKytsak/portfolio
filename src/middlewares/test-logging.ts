@@ -1,8 +1,10 @@
+import type { NextRequest } from 'next/server'
+
 /**
  * Example middleware helper — logs matched requests in dev.
- * Chained from src/proxy.js before next-intl runs.
+ * Chained from src/proxy.ts before next-intl runs.
  */
-export function testLoggingMiddleware(request) {
+export function testLoggingMiddleware(request: NextRequest): void {
   const { pathname, search } = request.nextUrl
 
   console.log('[test-middleware]', {
