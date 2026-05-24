@@ -5,6 +5,7 @@ import { SunIcon, MoonIcon } from '../Icons'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
+import { ThemeMode } from '@/constants/theme.const'
 import useThemeSwitcher from '@/hooks/useThemeSwitcher'
 import LanguagePicker from '../LanguagePicker'
 import { NAV_ITEMS, SOCIAL_ITEMS } from './constants'
@@ -72,12 +73,18 @@ export const NavBar = () => {
             </motion.a>
           ))}
           <button
-            onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+            onClick={() =>
+              setMode(
+                mode === ThemeMode.Light ? ThemeMode.Dark : ThemeMode.Light,
+              )
+            }
             className={`ml-3 flex items-center justify-center rounded-full p-1 ${
-              mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'
+              mode === ThemeMode.Light
+                ? 'bg-dark text-light'
+                : 'bg-light text-dark'
             }`}
           >
-            {mode === 'dark' ? (
+            {mode === ThemeMode.Dark ? (
               <SunIcon className='fill-dark' />
             ) : (
               <MoonIcon className='fill-dark' />
@@ -109,12 +116,18 @@ export const NavBar = () => {
           <nav className='flex items-center justify-center flex-wrap gap-y-4'>
             <div className='w-full flex items-center justify-center flex-wrap gap-3'>
               <button
-                onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+                onClick={() =>
+                  setMode(
+                    mode === ThemeMode.Light ? ThemeMode.Dark : ThemeMode.Light,
+                  )
+                }
                 className={`ml-3 flex items-center justify-center rounded-full p-1 ${
-                  mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'
+                  mode === ThemeMode.Light
+                    ? 'bg-dark text-light'
+                    : 'bg-light text-dark'
                 }`}
               >
-                {mode === 'dark' ? (
+                {mode === ThemeMode.Dark ? (
                   <SunIcon className='fill-dark' />
                 ) : (
                   <MoonIcon className='fill-dark' />

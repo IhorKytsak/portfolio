@@ -1,9 +1,9 @@
-import Script from 'next/script'
 import { Montserrat } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
+import { HtmlLang } from '@/components/HtmlLang'
 import { NavBar } from '@/components/navigation'
 import '@/styles/globals.css'
 
@@ -50,24 +50,16 @@ export default async function LocaleLayout({ children, params }) {
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className='scrollbar'>
-        <Script id='theme-switcher' strategy='beforeInteractive'>
-          {`if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
-          } else {
-            document.documentElement.classList.remove('dark')
-          }`}
-        </Script>
-        <main
-          className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}
-        >
-          <NextIntlClientProvider messages={messages}>
-            <NavBar />
-            {children}
-          </NextIntlClientProvider>
-        </main>
-      </body>
-    </html>
+    <>
+      <HtmlLang locale={locale} />
+      <main
+        className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}
+      >
+        <NextIntlClientProvider messages={messages}>
+          <NavBar />
+          {children}
+        </NextIntlClientProvider>
+      </main>
+    </>
   )
 }
