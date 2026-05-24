@@ -38,8 +38,6 @@ export const Project = ({ item, handleOpenModal }) => {
           src={item.images[0]}
           alt={item.title}
           className='w-full h-full group-hover:scale-105 duration-300'
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
           priority
         />
         <div className='absolute inset-0 flex items-center justify-center group-hover:scale-90 duration-300'>

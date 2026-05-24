@@ -42,6 +42,7 @@ const Slider = ({ images = [] }) => {
             className='rounded-lg'
             style={{ objectFit: 'contain' }}
             fill
+            sizes='(max-width: 479px) 90vw, (max-width: 767px) 448px, (max-width: 1023px) 672px, 768px'
           />
         </motion.div>
       </AnimatePresence>

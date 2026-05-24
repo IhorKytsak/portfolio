@@ -11,18 +11,20 @@ import Modal from '@/components/modal/Modal'
 
 import { myProjects } from '@/constants/projects.const'
 import { Project } from '@/components/project/Project'
-import useProjectDetailModal from '@/hooks/useProjectDetailModal'
+import useBodyScrollLock from '@/hooks/useBodyScrollLock'
+import useModal from '@/hooks/useModal'
 import ProjectDetails from '@/components/project/ProjectDetails'
 
 export default function ProjectsPage() {
   const t = useTranslations()
 
-  const { modalData, open, setModalData } = useProjectDetailModal()
+  const { data: modalData, open, openModal, closeModal } = useModal()
+  useBodyScrollLock(open)
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 })
 
   const handleOpenModal = (project, event) => {
     setClickPosition({ x: event.clientX, y: event.clientY })
-    setModalData(project)
+    openModal(project)
   }
 
   const projects = myProjects(t)
@@ -49,7 +51,7 @@ export default function ProjectsPage() {
         <Modal
           key={open ? 'open' : 'closed'}
           isOpen={open}
-          onClose={() => setModalData(null)}
+          onClose={closeModal}
           initialPosition={clickPosition}
         >
           <ProjectDetails
