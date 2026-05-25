@@ -1,8 +1,11 @@
+import type { ExperienceEntry, Skills } from '@/types/about.types'
+import type { Translator } from '@/types/i18n.types'
+
 export const clients = 3
 export const completedProjects = 20
 export const yearsOfExperience = 2
 
-export const experienceData = (t) => [
+export const experienceData = (t: Translator): ExperienceEntry[] => [
   {
     position: t('about.experience.cgs-team.position'),
     company: 'CGS-team',
@@ -52,7 +55,7 @@ export const experienceData = (t) => [
   },
 ]
 
-export const skills = {
+export const skills: Skills = {
   frontend: [
     'JavaScript',
     'React',

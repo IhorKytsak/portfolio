@@ -53,7 +53,10 @@ import marketplace from '../../public/images/projects/marketplace.png'
 import marketplace2 from '../../public/images/projects/marketplace-2.png'
 import marketplace3 from '../../public/images/projects/marketplace-3.png'
 
-export const myProjects = (t) => [
+import type { Project } from '@/types/project.types'
+import type { Translator } from '@/types/i18n.types'
+
+export const myProjects = (t: Translator): Project[] => [
   {
     title: 'NFT Marketplace',
     description: t('projects.marketplace.description'),
