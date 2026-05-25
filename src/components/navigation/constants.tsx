@@ -1,6 +1,8 @@
 import { GithubIcon, LinkedInIcon, TelegramIcon } from '../Icons'
 
-export const NAV_ITEMS = [
+import type { NavItem, SocialItem } from '@/types/navigation.types'
+
+export const NAV_ITEMS: NavItem[] = [
   {
     titleId: 'navigation.home',
     href: '/',
@@ -15,7 +17,7 @@ export const NAV_ITEMS = [
   },
 ]
 
-export const SOCIAL_ITEMS = [
+export const SOCIAL_ITEMS: SocialItem[] = [
   {
     name: 'github',
     icon: <GithubIcon className='text-dark dark:text-light' />,

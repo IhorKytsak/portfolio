@@ -9,7 +9,7 @@ import { experienceData } from '@/constants/about.const'
 
 const Experience = () => {
   const t = useTranslations()
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'center start'],
@@ -28,16 +28,16 @@ const Experience = () => {
           className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]'
         />
         <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
-          {experience.map((experience, index) => (
+          {experience.map((entry, index) => (
             <ExperienceItem
               key={index}
-              position={experience.position}
-              company={experience.company}
-              companyLink={experience.companyLink}
-              time={experience.time}
-              address={experience.address}
-              description={experience.description}
-              responsibilities={experience.responsibilities}
+              position={entry.position}
+              company={entry.company}
+              companyLink={entry.companyLink}
+              time={entry.time}
+              address={entry.address}
+              description={entry.description}
+              responsibilities={entry.responsibilities}
             />
           ))}
         </ul>

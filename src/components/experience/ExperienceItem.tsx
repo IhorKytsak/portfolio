@@ -4,6 +4,8 @@ import { motion, useScroll } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
+import type { ExperienceEntry } from '@/types/about.types'
+
 import LiIcon from '../LiIcon'
 
 const ExperienceItem = ({
@@ -14,8 +16,8 @@ const ExperienceItem = ({
   address,
   description,
   responsibilities,
-}) => {
-  const ref = useRef(null)
+}: ExperienceEntry) => {
+  const ref = useRef<HTMLLIElement>(null)
   const [isExpanded, setIsExpanded] = useState(false)
 
   const { scrollYProgress } = useScroll({

@@ -1,33 +1,15 @@
+'use client'
+
 import { motion } from 'framer-motion'
 
-const Modal = ({ isOpen, onClose, children, initialPosition }) => {
+import type { ModalProps } from '@/types/modal.types'
+
+import { getDropInVariants } from './modal.variants'
+
+const Modal = ({ isOpen, onClose, children, initialPosition }: ModalProps) => {
   if (!isOpen) return null
 
-  const dropIn = {
-    hidden: {
-      x: initialPosition.x - window.innerWidth / 2,
-      y: initialPosition.y - window.innerHeight / 2,
-      scale: 0.3,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      y: 0,
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        type: 'spring',
-        damping: 25,
-        stiffness: 500,
-      },
-    },
-    exit: {
-      scale: 0.3,
-      opacity: 0,
-      transition: { duration: 0.3 },
-    },
-  }
+  const dropIn = getDropInVariants(initialPosition)
 
   return (
     <div className='fixed inset-0 z-40 flex items-center justify-center'>

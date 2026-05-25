@@ -2,7 +2,20 @@
 
 import { Link, usePathname } from '@/i18n/navigation'
 
-export const CustomMobileLink = ({ href, title, className = '', toggle }) => {
+import type { NavItem } from '@/types/navigation.types'
+
+type CustomMobileLinkProps = Pick<NavItem, 'href'> & {
+  title: string
+  className?: string
+  toggle: () => void
+}
+
+export const CustomMobileLink = ({
+  href,
+  title,
+  className = '',
+  toggle,
+}: CustomMobileLinkProps) => {
   const pathname = usePathname()
 
   return (

@@ -14,12 +14,8 @@ import { Project } from '@/components/project/Project'
 import useBodyScrollLock from '@/hooks/useBodyScrollLock'
 import useModal from '@/hooks/useModal'
 import ProjectDetails from '@/components/project/ProjectDetails'
+import type { ClickPosition } from '@/types/modal.types'
 import type { Project as ProjectType } from '@/types/project.types'
-
-type ClickPosition = {
-  x: number
-  y: number
-}
 
 export default function ProjectsPage() {
   const t = useTranslations()

@@ -2,7 +2,18 @@
 
 import { Link, usePathname } from '@/i18n/navigation'
 
-export const CustomLink = ({ href, title, className = '' }) => {
+import type { NavItem } from '@/types/navigation.types'
+
+type CustomLinkProps = Pick<NavItem, 'href'> & {
+  title: string
+  className?: string
+}
+
+export const CustomLink = ({
+  href,
+  title,
+  className = '',
+}: CustomLinkProps) => {
   const pathname = usePathname()
 
   return (
