@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import Layout from '@/components/Layout'
 import AnimatedText from '@/components/AnimatedText'
 import { LinkArrow } from '@/components/Icons'
-import profilePic from '../../../public/images/profile/web-development.png'
+import profilePic from '@/assets/images/profile/web-development.png'
 import TransitionEffect from '@/components/TransitionEffect'
 import GetEmail from '@/components/GetEmail'
 

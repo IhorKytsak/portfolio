@@ -1,8 +1,11 @@
 import { Analytics } from '@vercel/analytics/next'
 import { getLocale } from 'next-intl/server'
+
 import { getThemeInitScript } from '@/lib/theme'
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({
+  children,
+}: LayoutProps<'/'>) {
   const locale = await getLocale()
 
   return (

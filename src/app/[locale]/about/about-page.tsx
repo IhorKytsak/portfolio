@@ -17,7 +17,7 @@ import {
   clients,
 } from '@/constants/about.const'
 
-import profilePic from '../../../../public/images/profile/avatar.jpg'
+import profilePic from '@/assets/images/profile/avatar.jpg'
 
 export default function AboutPage() {
   const t = useTranslations()

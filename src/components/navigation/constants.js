@@ -1,11 +1,4 @@
-import {
-  TwitterIcon,
-  GithubIcon,
-  LinkedInIcon,
-  PinterestIcon,
-  DribbbleIcon,
-  TelegramIcon,
-} from '../Icons'
+import { GithubIcon, LinkedInIcon, TelegramIcon } from '../Icons'
 
 export const NAV_ITEMS = [
   {
@@ -25,7 +18,7 @@ export const NAV_ITEMS = [
 export const SOCIAL_ITEMS = [
   {
     name: 'github',
-    icon: <GithubIcon />,
+    icon: <GithubIcon className='text-dark dark:text-light' />,
     href: 'https://github.com/IhorKytsak',
   },
   {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, type MouseEvent } from 'react'
 import { useTranslations } from 'next-intl'
 import { AnimatePresence } from 'framer-motion'
 
@@ -14,15 +14,25 @@ import { Project } from '@/components/project/Project'
 import useBodyScrollLock from '@/hooks/useBodyScrollLock'
 import useModal from '@/hooks/useModal'
 import ProjectDetails from '@/components/project/ProjectDetails'
+import type { Project as ProjectType } from '@/types/project.types'
+
+type ClickPosition = {
+  x: number
+  y: number
+}
 
 export default function ProjectsPage() {
   const t = useTranslations()
 
-  const { data: modalData, open, openModal, closeModal } = useModal()
+  const { data: modalData, open, openModal, closeModal } =
+    useModal<ProjectType>()
   useBodyScrollLock(open)
-  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 })
+  const [clickPosition, setClickPosition] = useState<ClickPosition>({
+    x: 0,
+    y: 0,
+  })
 
-  const handleOpenModal = (project, event) => {
+  const handleOpenModal = (project: ProjectType, event: MouseEvent) => {
     setClickPosition({ x: event.clientX, y: event.clientY })
     openModal(project)
   }
