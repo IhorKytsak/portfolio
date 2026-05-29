@@ -5,13 +5,14 @@ import { useTranslations } from 'next-intl'
 
 import SkillList from './SkillList'
 import { skills } from '@/constants/about.const'
+import type { SkillCategory } from '@/types/about.types'
 
 export default function Skills() {
   const t = useTranslations()
 
-  const [hoveredList, setHoveredList] = useState(null)
+  const [hoveredList, setHoveredList] = useState<SkillCategory | null>(null)
 
-  const highlightLine = (value) => {
+  const highlightLine = (value: SkillCategory) => {
     const dynamicClasses =
       hoveredList === value
         ? 'bg-primary dark:bg-primaryDark'

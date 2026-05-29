@@ -2,12 +2,16 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import { ChevronLeft, ChevronRight } from '../Icons'
 
-const Slider = ({ images = [] }) => {
+type SliderProps = {
+  images?: StaticImageData[]
+}
+
+const Slider = ({ images = [] }: SliderProps) => {
   const t = useTranslations()
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -59,7 +63,7 @@ const Slider = ({ images = [] }) => {
             onClick={handleNext}
             className='absolute right-5 top-1/2 transform -translate-y-1/2 p-2 bg-dark/50 text-light rounded-full hover:bg-dark/90 focus:outline-none transition-colors duration-300'
           >
-            <ChevronRight className='w-6 h-6' />
+            <ChevronRight />
           </button>
 
           <div className='absolute bottom-2 text-white bg-dark/60 px-3 py-1 rounded-lg text-sm'>

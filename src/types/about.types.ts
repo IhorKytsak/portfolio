@@ -13,3 +13,5 @@ export type Skills = {
   backend: string[]
   other: string[]
 }
+
+export type SkillCategory = keyof Skills

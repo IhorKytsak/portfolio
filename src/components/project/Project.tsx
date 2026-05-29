@@ -1,31 +1,45 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, type MouseEvent } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useAnimate } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
 import { ClickIcon, GithubIcon, LinkArrow } from '@/components/Icons'
+import type { Project as ProjectItem } from '@/types/project.types'
 
-export const Project = ({ item, handleOpenModal }) => {
+type ProjectCardProps = {
+  item: ProjectItem
+  handleOpenModal: (project: ProjectItem, event: MouseEvent) => void
+}
+
+export const Project = ({ item, handleOpenModal }: ProjectCardProps) => {
   const t = useTranslations()
   const [scope, animate] = useAnimate()
 
-  const linkRef = useRef()
-  const gitRef = useRef()
+  const linkRef = useRef<HTMLDivElement>(null)
+  const gitRef = useRef<HTMLDivElement>(null)
 
   const handleLinkMouseOver = () => {
-    animate(linkRef.current, { x: 5 }, { duration: 0.3 })
+    if (linkRef.current) {
+      animate(linkRef.current, { x: 5 }, { duration: 0.3 })
+    }
   }
   const handleLinkMouseOut = () => {
-    animate(linkRef.current, { x: 0 }, { duration: 0.3 })
+    if (linkRef.current) {
+      animate(linkRef.current, { x: 0 }, { duration: 0.3 })
+    }
   }
   const handleGitMouseOver = () => {
-    animate(gitRef.current, { x: 5 }, { duration: 0.3 })
+    if (gitRef.current) {
+      animate(gitRef.current, { x: 5 }, { duration: 0.3 })
+    }
   }
   const handleGitMouseOut = () => {
-    animate(gitRef.current, { x: 0 }, { duration: 0.3 })
+    if (gitRef.current) {
+      animate(gitRef.current, { x: 0 }, { duration: 0.3 })
+    }
   }
 
   return (

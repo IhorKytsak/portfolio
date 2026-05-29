@@ -4,8 +4,15 @@ import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useTranslations } from 'next-intl'
 
-const Details = ({ type, time, place, info }) => {
-  const ref = useRef(null)
+type DetailsProps = {
+  type: string
+  time: string
+  place: string
+  info: string
+}
+
+const Details = ({ type, time, place, info }: DetailsProps) => {
+  const ref = useRef<HTMLDivElement>(null)
 
   return (
     <div
@@ -30,7 +37,7 @@ const Details = ({ type, time, place, info }) => {
 }
 
 const Education = () => {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const t = useTranslations()
   return (
     <div className='my-32 sm:my-36'>

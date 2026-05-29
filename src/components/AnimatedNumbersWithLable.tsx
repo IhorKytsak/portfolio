@@ -1,6 +1,14 @@
 import AnimatedNumbers from '@/components/AnimatedNumbers'
 
-const AnimatedNumbersWithLable = ({ value, label }) => {
+type AnimatedNumbersWithLableProps = {
+  value: number
+  label: string
+}
+
+const AnimatedNumbersWithLable = ({
+  value,
+  label,
+}: AnimatedNumbersWithLableProps) => {
   return (
     <div className='flex flex-col items-end justify-center xl:items-center'>
       <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl sx:text-4xl'>

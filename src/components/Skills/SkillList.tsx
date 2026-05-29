@@ -1,6 +1,13 @@
 import SkillItem from './SkillItem'
 
-const SkillList = ({ skills, classes, onHover, onLeave }) => {
+type SkillListProps = {
+  skills: string[]
+  classes: string
+  onHover: () => void
+  onLeave: () => void
+}
+
+const SkillList = ({ skills, classes, onHover, onLeave }: SkillListProps) => {
   return (
     <ul
       className={`flex flex-wrap gap-3 h-fit ${classes}`}
@@ -13,4 +20,5 @@ const SkillList = ({ skills, classes, onHover, onLeave }) => {
     </ul>
   )
 }
+
 export default SkillList

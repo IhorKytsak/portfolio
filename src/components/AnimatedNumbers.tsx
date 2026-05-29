@@ -1,8 +1,12 @@
 import { useEffect, useRef } from 'react'
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
 
-const AnimatedNumbers = ({ value }) => {
-  const ref = useRef(null)
+type AnimatedNumbersProps = {
+  value: number
+}
+
+const AnimatedNumbers = ({ value }: AnimatedNumbersProps) => {
+  const ref = useRef<HTMLSpanElement>(null)
 
   const motionValue = useMotionValue(0)
   const springValue = useSpring(motionValue, {
@@ -18,8 +22,8 @@ const AnimatedNumbers = ({ value }) => {
 
   useEffect(() => {
     springValue.on('change', (latest) => {
-      if (ref.current && latest.toFixed(0) <= value) {
-        ref.current.textContent = latest.toFixed(0)
+      if (ref.current && latest <= value) {
+        ref.current.textContent = Math.round(latest).toString()
       }
     })
   }, [springValue, value])

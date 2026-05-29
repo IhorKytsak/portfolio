@@ -1,6 +1,10 @@
-import { motion } from 'framer-motion'
+import { motion, type MotionValue } from 'framer-motion'
 
-const LiIcon = ({ scrollYProgress }) => {
+type LiIconProps = {
+  scrollYProgress: MotionValue<number>
+}
+
+const LiIcon = ({ scrollYProgress }: LiIconProps) => {
   return (
     <figure className='absolute left-0 stroke-dark dark:stroke-light'>
       <svg

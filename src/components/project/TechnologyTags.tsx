@@ -1,4 +1,8 @@
-const TechnologyTags = ({ technologies }) => {
+type TechnologyTagsProps = {
+  technologies: string[]
+}
+
+const TechnologyTags = ({ technologies }: TechnologyTagsProps) => {
   return (
     <div className='flex flex-wrap gap-2 my-1'>
       {technologies.map((tech, index) => (

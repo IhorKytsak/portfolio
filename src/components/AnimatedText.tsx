@@ -24,7 +24,12 @@ const singleWord = {
   },
 }
 
-const AnimatedText = ({ text, className = '' }) => {
+type AnimatedTextProps = {
+  text: string
+  className?: string
+}
+
+const AnimatedText = ({ text, className = '' }: AnimatedTextProps) => {
   return (
     <div className='w-full mx-auto py-2 flex justify-center items-center text-center overflow-hidden sm:py-0'>
       <motion.h1
