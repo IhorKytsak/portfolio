@@ -5,6 +5,7 @@ import AboutPage from './about-page'
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale()
+
   const t = await getTranslations({ locale })
 
   return {
