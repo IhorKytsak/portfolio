@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl'
 
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
-import Skills from '@/components/skills/Skills'
 import Experience from '@/components/experience/Experience'
 import Education from '@/components/Education'
 import AnimatedNumbersWithLable from '@/components/AnimatedNumbersWithLable'
@@ -17,6 +16,7 @@ import {
 } from '@/constants/about.const'
 
 import profilePic from '@/assets/images/profile/avatar.jpg'
+import Skills from '@/components/skills/Skills'
 
 export default function AboutPage() {
   const t = useTranslations()
