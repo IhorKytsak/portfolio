@@ -7,17 +7,26 @@ import type { NavItem } from '@/types/navigation.types'
 type CustomLinkProps = Pick<NavItem, 'href'> & {
   title: string
   className?: string
+  onClick?: (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: NavItem['href'],
+  ) => void
 }
 
 export const CustomLink = ({
   href,
   title,
   className = '',
+  onClick,
 }: CustomLinkProps) => {
   const pathname = usePathname()
 
   return (
-    <Link href={href} className={`${className} relative group`}>
+    <Link
+      href={href}
+      className={`${className} relative group`}
+      onClick={(e) => onClick?.(e, href)}
+    >
       {title}
       <span
         className={`h-[1px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300

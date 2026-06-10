@@ -11,15 +11,29 @@ import LanguagePicker from '../LanguagePicker'
 import { NAV_ITEMS, SOCIAL_ITEMS } from './constants'
 import { CustomLink } from './CustomLink'
 import { CustomMobileLink } from './CustomMobileLink'
+import { useTransitionRouter } from 'next-view-transitions'
+import { NavItem } from '@/types/navigation.types'
+import { pageAnimation } from '@/lib/pageTransition'
 
 export const NavBar = () => {
   const [mode, setMode] = useThemeSwitcher()
   const [isOpen, setIsOpen] = useState(false)
+  const router = useTransitionRouter()
 
   const t = useTranslations()
 
   const handleClick = () => {
     setIsOpen(!isOpen)
+  }
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: NavItem['href'],
+  ) => {
+    e.preventDefault()
+    router.push(href, {
+      onTransitionReady: pageAnimation,
+    })
   }
 
   return (
@@ -55,6 +69,7 @@ export const NavBar = () => {
                 href={item.href}
                 title={title}
                 className='mr-6'
+                onClick={handleLinkClick}
               />
             )
           })}
@@ -109,6 +124,7 @@ export const NavBar = () => {
                   href={item.href}
                   title={title}
                   toggle={handleClick}
+                  onClick={handleLinkClick}
                 />
               )
             })}

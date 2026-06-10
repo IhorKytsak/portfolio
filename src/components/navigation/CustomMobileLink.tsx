@@ -8,6 +8,10 @@ type CustomMobileLinkProps = Pick<NavItem, 'href'> & {
   title: string
   className?: string
   toggle: () => void
+  onClick?: (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: NavItem['href'],
+  ) => void
 }
 
 export const CustomMobileLink = ({
@@ -15,13 +19,17 @@ export const CustomMobileLink = ({
   title,
   className = '',
   toggle,
+  onClick,
 }: CustomMobileLinkProps) => {
   const pathname = usePathname()
 
   return (
     <Link
       href={href}
-      onClick={toggle}
+      onClick={(e) => {
+        toggle()
+        onClick?.(e, href)
+      }}
       className={`${className} relative group text-dark dark:text-light`}
     >
       {title}
