@@ -10,7 +10,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className='scrollbar'>
+      <body className='scrollbar bg-light dark:bg-dark'>
         <script
           id='theme-switcher'
           dangerouslySetInnerHTML={{ __html: getThemeInitScript() }}

@@ -7,7 +7,6 @@ import Layout from '@/components/Layout'
 import AnimatedText from '@/components/AnimatedText'
 import { LinkArrow } from '@/components/Icons'
 import profilePic from '@/assets/images/profile/web-development.png'
-import TransitionEffect from '@/components/TransitionEffect'
 import GetEmail from '@/components/GetEmail'
 
 export default function HomePage() {
@@ -15,7 +14,6 @@ export default function HomePage() {
 
   return (
     <>
-      <TransitionEffect />
       <div className='flex items-center text-dark w-full min-h-[calc(100dvh-96px)] dark:text-light'>
         <Layout className='pt-8 md:pt-16 sm:pt-8'>
           <div className='flex items-center justify-between w-full lg:flex-col'>

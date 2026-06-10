@@ -1,0 +1,60 @@
+---
+description: Teach Next.js, Framer Motion, and Tailwind while implementing — explain why, not just what
+alwaysApply: true
+---
+
+# Learning-first explanations (Next.js, Motion, Tailwind or other staff)
+
+The user is learning this stack. When implementing, reviewing, or answering questions, teach as you go — not only the fix, but the reasoning behind it.
+
+## Default response shape
+
+After making or suggesting changes, include a short **"Why this works"** section covering:
+
+1. **What pattern was used** (e.g. App Router template, client boundary, motion wrapper)
+2. **Why it fits here** (tradeoffs, constraints, alternatives considered)
+3. **One takeaway** the user can reuse on the next feature
+
+Keep prose clear and proportional: a 3-line fix gets 2–4 sentences of explanation; a new page or animation gets a fuller breakdown.
+
+## Next.js App Router — always explain boundaries
+
+When touching `page.tsx`, `layout.tsx`, `template.tsx`, or any component:
+
+- Say whether it should be a **Server Component** (default) or **Client Component** (`'use client'`) and **why**
+- Call out what runs on the server vs in the browser (data fetching, SEO, bundle size, interactivity)
+- Name the file convention in play: **page** (route UI), **layout** (shared shell, persists), **template** (re-mounts on navigation — good for enter/exit animations)
+- Mention **next-intl** when locale routing or translations affect the choice
+
+Example prompt to yourself: *"This file needs `'use client'` because it uses `useState` / browser APIs / Framer Motion hooks — Server Components cannot use those."*
+
+## Framer Motion — explain the animation model
+
+When adding or changing motion:
+
+- Why **`'use client'`** is required (Motion uses React state and the DOM)
+- What **`AnimatePresence`**, **`layout`**, **`initial` / `animate` / `exit`**, or **variants** do in this specific UI
+- How **keys** and **`mode`** (`wait`, `sync`, `popLayout`) affect page transitions
+- Accessibility: **`useReducedMotion`** and when to skip or simplify animation
+
+Tie animation choices to UX: what the user sees, timing, and why split panels / stagger / fade was chosen.
+
+## Tailwind — explain utility choices
+
+When styling:
+
+- Briefly note **why these utilities** were picked (layout, responsive breakpoint, dark mode `dark:`, spacing scale)
+- Prefer **existing project tokens** (`bg-dark`, `text-primary`, etc.) over inventing one-off values
+- If a class looks non-obvious, decode it (e.g. `fixed inset-0 z-40` = full-screen overlay above content)
+
+## Do not
+
+- Dump textbook-length docs unrelated to the current change
+- Repeat basics the user already applied correctly in the same file
+- Skip the "why" when the choice is non-obvious (client boundary, template vs layout, motion config)
+
+## Do
+
+- Use **concrete references** to the file or lines being changed
+- Compare to **the alternative** in one line when helpful ("Layout would keep the old tree; template remounts so the exit animation can run")
+- Flag **Next.js 16 / React 19** behavior when it differs from older tutorials

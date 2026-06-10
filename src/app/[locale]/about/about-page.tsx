@@ -5,10 +5,9 @@ import { useTranslations } from 'next-intl'
 
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
-import Skills from '@/components/Skills/Skills'
+import Skills from '@/components/skills/Skills'
 import Experience from '@/components/experience/Experience'
 import Education from '@/components/Education'
-import TransitionEffect from '@/components/TransitionEffect'
 import AnimatedNumbersWithLable from '@/components/AnimatedNumbersWithLable'
 
 import {
@@ -24,7 +23,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <TransitionEffect />
       <div className='flex w-full flex-col items-center justify-center dark:text-light'>
         <Layout className='pt-16'>
           <AnimatedText
@@ -39,15 +37,11 @@ export default function AboutPage() {
               <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>
                 {t('about.biography.title')}
               </h2>
-              <p className='font-medium'>
-                {t('about.biography.paragraphs.0')}
-              </p>
+              <p className='font-medium'>{t('about.biography.paragraphs.0')}</p>
               <p className='font-medium my-4'>
                 {t('about.biography.paragraphs.1')}
               </p>
-              <p className='font-medium'>
-                {t('about.biography.paragraphs.2')}
-              </p>
+              <p className='font-medium'>{t('about.biography.paragraphs.2')}</p>
             </div>
             <div className='col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span-8'>
               <div className='absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark dark:bg-light' />

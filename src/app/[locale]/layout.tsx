@@ -8,6 +8,7 @@ import { NavBar } from '@/components/navigation'
 import { resolveLocale, routing, type Locale } from '@/i18n/routing'
 
 import '@/styles/globals.css'
+import { ViewTransitions } from 'next-view-transitions'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -52,7 +53,7 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <>
+    <ViewTransitions>
       <HtmlLang locale={locale} />
       <main
         className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}
@@ -62,6 +63,6 @@ export default async function LocaleLayout({
           {children}
         </NextIntlClientProvider>
       </main>
-    </>
+    </ViewTransitions>
   )
 }
