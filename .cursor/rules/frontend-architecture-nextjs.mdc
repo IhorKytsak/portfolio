@@ -1,0 +1,84 @@
+---
+description: Teach Next.js frontend architecture and patterns at a senior level — explain when it matters, not every change
+alwaysApply: true
+---
+
+# Frontend architecture & patterns (Next.js)
+
+The user is building senior-level intuition for React/Next.js structure. When a change involves a real architectural choice, briefly name the pattern, why it fits, and one alternative — then move on.
+
+## When to explain (proportionality)
+
+Explain architecture **only when the change is non-obvious or educational**:
+
+- New route, page split, or moving logic between server/client
+- Introducing or reshaping state (lifted, local, context, server-fetched)
+- Code-splitting boundaries (`'use client'`, dynamic import, lazy feature)
+- New feature folder, container/presentational split, or shared abstraction
+
+**Skip** when the edit is cosmetic, a typo, or repeats a pattern already used correctly in the same file.
+
+Default shape when you do explain (2–5 sentences max):
+
+1. **Pattern** — what you chose (e.g. server `page.tsx` + client `*-page.tsx`)
+2. **Why here** — constraint or tradeoff
+3. **Alternative** — one line ("Could use a single client page, but loses server metadata and ships more JS")
+4. **Takeaway** — one reusable rule for the next feature
+
+## How React + Next.js App Router actually work
+
+- **Server Components (default)** run on the server (or at build time). Their output is a **serializable tree** sent to the client. They can `async` fetch, read secrets, and use server-only APIs. They **cannot** use hooks, browser APIs, or event handlers.
+- **`'use client'`** marks a **client boundary**. That file and its imports become part of the **client bundle** and hydrate in the browser. Everything imported *above* the boundary from a Server Component stays server-only.
+- **Composition trick**: a Server Component can render a Client Component and pass **children** (often other Server Components) through — children stay on the server until the client slot. Use this to keep interactive islands small.
+- **Layouts** persist across navigations; **pages** swap; **templates** remount (useful for enter/exit). Don't put heavy client state in root `layout.tsx` unless the whole app needs it.
+
+## Code splitting — push boundaries down
+
+| Goal | Approach |
+|------|----------|
+| Smaller initial JS | Default to Server Components; add `'use client'` only on leaves that need interactivity |
+| Route-level split | Next.js already splits by route — keep `page.tsx` thin and server-first |
+| Heavy client features | `next/dynamic` with `{ ssr: false }` only when the feature truly needs the browser at first paint |
+| Shared logic | Custom hooks or plain `.ts` utils — hooks only inside client components |
+| Data + UI | Fetch on the server in `page.tsx` / layout; pass props into client UI — avoid duplicating fetch in `useEffect` |
+
+**This project**: server `page.tsx` (metadata, `generateMetadata`) + colocated client `*-page.tsx` (composition, `useTranslations`, motion). Follow that split for new routes.
+
+## Where to keep state
+
+| State type | Best home | Why |
+|------------|-----------|-----|
+| URL / shareable | `searchParams`, route params, or router | Bookmarkable, survives refresh |
+| Server / cacheable | Server Component fetch + props | No client bundle, SEO-friendly |
+| UI ephemeral (hover, open menu) | Nearest **client** leaf or small container | Avoid re-rendering the whole page |
+| Shared across siblings | **Lift** to lowest common **client** ancestor | `Skills` owns `hoveredList`, passes handlers to `SkillList` |
+| App-wide (theme, locale UI) | Context or existing providers (`NextIntlClientProvider`) | Avoid prop drilling many levels |
+| Form draft / wizard | Client container or URL state | Don't put transient form state in server layouts |
+
+**Rule of thumb**: server for **data and structure**; client for **interaction and animation**. If only one section needs `useState`, that section (or its parent section) gets `'use client'`, not the route shell.
+
+## Patterns to name when they appear
+
+- **Composition** — pages assemble sections; sections assemble lists and leaves (`AboutPage` → `Layout` → `Skills` → `SkillList` → `SkillItem`)
+- **Container / presentational** — parent owns state and handlers; children render props (`Skills` vs `SkillList`)
+- **Colocation** — route shell + page UI in the same folder; `modal.variants.ts` next to `Modal.tsx`
+- **Feature folders** — `components/skills/`, `components/navigation/` over flat `components/Button.tsx` soup
+- **Config extraction** — variants, constants, types out of JSX for readability
+- **Barrel export** — `navigation/index.tsx` as the public API of a folder
+
+Mention **one alternative** when useful: e.g. Context instead of lifted state (if many distant consumers), or React Query for client cache (if server refetch isn't enough).
+
+## Folder conventions (this repo)
+
+- `app/[locale]/.../page.tsx` — Server: metadata, thin wrapper
+- `app/[locale]/.../*-page.tsx` — Client: page composition and interactivity
+- `components/<feature>/` — reusable UI by domain
+- `components/Layout.tsx` — presentational page width/padding wrapper (`children` + `className`)
+- `constants/`, `types/` — data and shapes, not inline in components
+
+## Do not
+
+- Lecture on every Tailwind class or obvious rename
+- Add `'use client'` to `page.tsx` when only a child needs hooks
+- Fetch the same data on server and again in `useEffect` without a reason
+- Create `atoms/` / `molecules/` folders unless asked — describe atomic levels in prose instead

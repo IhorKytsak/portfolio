@@ -3,9 +3,11 @@ import { useInView, useMotionValue, useSpring } from 'framer-motion'
 
 type AnimatedNumbersProps = {
   value: number
+  /** Milliseconds to wait after entering the viewport before counting up */
+  delay?: number
 }
 
-const AnimatedNumbers = ({ value }: AnimatedNumbersProps) => {
+const AnimatedNumbers = ({ value, delay = 0 }: AnimatedNumbersProps) => {
   const ref = useRef<HTMLSpanElement>(null)
 
   const motionValue = useMotionValue(0)
@@ -15,10 +17,14 @@ const AnimatedNumbers = ({ value }: AnimatedNumbersProps) => {
   const isInView = useInView(ref, { once: true })
 
   useEffect(() => {
-    if (isInView) {
+    if (!isInView) return
+
+    const timeout = setTimeout(() => {
       motionValue.set(value)
-    }
-  }, [isInView, value, motionValue])
+    }, delay)
+
+    return () => clearTimeout(timeout)
+  }, [isInView, value, motionValue, delay])
 
   useEffect(() => {
     springValue.on('change', (latest) => {

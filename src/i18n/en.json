@@ -46,42 +46,66 @@
 
     "experience": {
       "title": "Experience",
-      "cgs-team": {
-        "position": "Full-stack Developer",
-        "address": "Ukraine",
-        "description": "Developing from start to finish projects with direct client interaction, participating in all stages of development, from design and architecture to deployment and optimization.",
+      "industry": "Industry",
+      "domain": "Domain",
+      "nda": {
+        "position": "Full-Stack Engineer",
+        "projectName": "NDA - Blockchain-powered Product Journey Platform",
+        "time": "01/2024 – present",
+        "industry": "SaaS",
+        "domain": "Supply Chain & Product Provenance",
+        "description": "A multi-tenant SaaS platform for product provenance, supply chain transparency, sustainability claims, and blockchain-backed product journey records. Brands and suppliers manage organizations, products, supply chain data, sustainability information, and digital product journeys; consumers scan products or open public journey pages to explore origin, production steps, delivery stages, and sustainability details. The platform spans a subscription-based admin app, multilingual public journey pages with map visualization, Web3 verification flows, campaign and token rewards, and AI-powered automation.",
         "responsibilities": [
-          "Engaged in full-stack development using the latest tools and best practices",
-          "Provided solutions for tasks and implemented them",
-          "Deployed projects and maintained them across different environments",
-          "Refactored and migrated legacy code",
-          "Participated in analysis, design, coding, and testing",
-          "Analyzing and clarifying project requirements",
-          "Estimating tasks and timelines for development cycles"
+          "Owned end-to-end delivery for a blockchain-powered product journey platform focused on product provenance, sustainability claims, and transparent supply-chain visibility.",
+          "Built core admin workflows for company/product management, subscription access, product scanning, approval flows, campaign management, and token-based user rewards.",
+          "Developed public product journey pages with multilingual support, consumer-facing product details, and map-based visualization of origin, production, and delivery stages.",
+          "Integrated Web3 flows for blockchain-backed product records, including smart contract interactions, transaction creation, approval handling, and reliable state synchronization.",
+          "Built AI and automation features using OpenAI API, scheduled jobs, and X/Twitter / Telegram integrations for chatbot responses, generated posts, and community engagement.",
+          "Established deployment workflows with Docker, GitHub Actions, and AWS services, supporting fast product iteration while keeping production releases controlled and reliable."
         ]
       },
-      "goit": {
-        "position": "React Mentor",
-        "address": "Ukraine",
-        "description": "Mentored students on the React course, providing guidance on mastering key concepts. Evaluated homework submissions and offered personalized feedback to help improve their skills.",
+      "gentler-streak": {
+        "position": "Backend Engineer",
+        "projectName": "Gentler Streak — Fitness Tracker with Readiness Guidance",
+        "time": "11/2022 – 12/2023",
+        "industry": "HealthTech",
+        "domain": "Fitness Tracking",
+        "description": "Gentler Streak is a fitness mobile application that helps users track physical activity, understand their readiness, and monitor long-term progress. The product focuses on healthy fitness habits, activity history, recovery awareness, and personalized guidance. It combines mobile tracking, user accounts, activity synchronization, subscription-based access, and historical data insights to support consistent and balanced training.",
         "responsibilities": [
-          "Providing guidance and support to students in understanding and implementing React concepts and best practices",
-          "Assisting students in identifying and resolving their issues",
-          "Tracking and evaluating students' progress and providing constructive feedback for improvement;",
-          "Collaborating with other mentors and instructors to improve the learning process"
+          "Owned backend services for account lifecycle, sync, and long-term activity history, optimised for mobile connectivity constraints.",
+          "Designed aggregation pipelines for timelines and readiness summaries, maintaining data correctness across months/years of user history.",
+          "Built subscription/entitlement pathways with audit-friendly state transitions and backwards-compatibility safety rails to prevent revenue-impacting regressions.",
+          "Introduced rate limiting and defensive validation on core endpoints — prevented abuse patterns and protected stability during traffic spikes."
         ]
       },
-      "softserve": {
-        "position": "Full-stack Developer",
-        "address": "Ukraine",
-        "description": "Worked on a commercial site for selling bags with an admin panel, following Scrum methodology. Actively collaborated with team members and other departments throughout the development process.",
+      "spicenet": {
+        "position": "Full-Stack Engineer",
+        "projectName": "Spicenet Portal — Web3 Ecosystem Portal",
+        "time": "01/2022 – 09/2023",
+        "industry": "Web3",
+        "domain": "DeFi",
+        "description": "Spicenet Portal is a Web3 ecosystem platform designed to engage users through wallet-based access, quests, rewards, leaderboards, and campaign-based activities. The portal allows users to connect crypto wallets, complete tasks, track progress, and claim rewards. It supports user engagement, community growth, and activity tracking within a DeFi ecosystem.",
         "responsibilities": [
-          "Participated in analysis, design, coding, and testing",
-          "Reviewing and providing feedback on pull requests",
-          "Analyzing and clarifying project requirements",
-          "Estimating tasks and timelines for development cycles",
-          "Covering code with unit tests",
-          "Participated in Agile development meetings and followed Agile processes"
+          "Architected portal with explicit domain boundaries (quests, progression, rewards, leaderboard), enabling rapid campaign iteration without destabilising core flows.",
+          "Implemented wallet-based authentication and message-signing flows with consistent session behaviour across wallet providers.",
+          "Built anti-abuse and data-integrity guardrails: idempotent reward claims, server-side verification, replay-protection — eliminated fraudulent claim attempts entirely.",
+          "Designed cache-aware read paths for high-churn views (leaderboards, progress).",
+          "Established observability hooks for key funnels (quest completion, wallet connect, claim success), enabling data-driven prioritisation."
+        ]
+      },
+      "tella": {
+        "position": "Full-Stack Engineer",
+        "projectName": "Tella — Screen Recording & Editing SaaS",
+        "time": "06/2020 – 01/2022",
+        "industry": "SaaS",
+        "domain": "Video Processing",
+        "description": "Tella is a browser-based screen recording and video editing SaaS platform that helps users create, edit, process, and share professional-looking videos. The product is used for tutorials, product demos, presentations, async communication, and content creation. It provides a smooth workflow from recording and editing to video processing, conversion, and publishing.",
+        "responsibilities": [
+          "Owned backend delivery for core media workflows (asset ingest, processing, conversion, publish-readiness), ensuring correctness under large payloads.",
+          "Designed and standardized API contracts powering editor/publishing surfaces, keeping client behavior predictable across fast product iteration.",
+          "Hardened processing paths by tightening failure handling, retries, and asset consistency guarantees.",
+          "Introduced baseline observability (structured logging, alerting) on the most failure-prone media paths, cutting MTTR from ~2h to <30 min.",
+          "Established rollout discipline (small batches, instrumentation-driven validation) for pipeline-impacting changes — zero regressions over 8 releases."
         ]
       }
     }

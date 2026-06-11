@@ -29,16 +29,7 @@ const Experience = () => {
         />
         <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
           {experience.map((entry, index) => (
-            <ExperienceItem
-              key={index}
-              position={entry.position}
-              company={entry.company}
-              companyLink={entry.companyLink}
-              time={entry.time}
-              address={entry.address}
-              description={entry.description}
-              responsibilities={entry.responsibilities}
-            />
+            <ExperienceItem key={index} {...entry} />
           ))}
         </ul>
       </div>

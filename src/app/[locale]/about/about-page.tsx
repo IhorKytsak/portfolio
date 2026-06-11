@@ -57,14 +57,17 @@ export default function AboutPage() {
               <AnimatedNumbersWithLable
                 label={t('about.satisfied-clients')}
                 value={clients}
+                delay={500}
               />
               <AnimatedNumbersWithLable
                 label={t('about.projects-completed')}
                 value={completedProjects}
+                delay={500}
               />
               <AnimatedNumbersWithLable
                 label={t('about.years-of-experience')}
                 value={yearsOfExperience}
+                delay={500}
               />
             </div>
           </div>

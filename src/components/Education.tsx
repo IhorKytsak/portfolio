@@ -47,7 +47,7 @@ const Education = () => {
       <div ref={ref} className='w-[75%] mx-auto relative lg:w-[80%] md:w-full'>
         <Details
           type={t('about.education.type')}
-          time='2014-2018'
+          time='2016-2020'
           place={t('about.education.place')}
           info={t('about.education.info')}
         />

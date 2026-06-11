@@ -1,11 +1,12 @@
 export type ExperienceEntry = {
   position: string
-  company: string
-  companyLink: string
+  projectName: string
   time: string
-  address: string
+  industry: string
+  domain: string
   description: string
   responsibilities: string[]
+  technologies: string[]
 }
 
 export type Skills = {

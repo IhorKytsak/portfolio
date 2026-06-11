@@ -3,16 +3,18 @@ import AnimatedNumbers from '@/components/AnimatedNumbers'
 type AnimatedNumbersWithLableProps = {
   value: number
   label: string
+  delay?: number
 }
 
 const AnimatedNumbersWithLable = ({
   value,
   label,
+  delay,
 }: AnimatedNumbersWithLableProps) => {
   return (
     <div className='flex flex-col items-end justify-center xl:items-center'>
       <span className='inline-block text-7xl font-bold md:text-6xl sm:text-5xl sx:text-4xl'>
-        <AnimatedNumbers value={value} />+
+        <AnimatedNumbers value={value} delay={delay} />+
       </span>
       <h2 className='text-xl font-medium capitalize text-dark/75 dark:text-light/75 text-end xl:text-center md:text-lg sm:text-base xs:text-sm'>
         {label}
